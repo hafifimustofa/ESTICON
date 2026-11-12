@@ -1,0 +1,3531 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESTICON (ESTIMATOR KONSTRUKSI) — RAB &amp; Kurva S Magelang</title>
+<style>
+/* ==========================================================================
+   ESTICON — Tema Modern Elegan & Adaptif (Kontras Tinggi untuk Segala Latar)
+   ========================================================================== */
+:root {
+  /* Mode Terang (Default) */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --surface-hover: #e2e8f0;
+  --ink: #0f172a;               /* Teks gelap pekat pada latar terang */
+  --ink-secondary: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --accent: #2563eb;            /* Biru modern berenergi */
+  --accent-hover: #1d4ed8;
+  --accent-ink: #ffffff;        /* Teks putih terang pada tombol utama */
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --head: #f1f5f9;
+  --bar: #94a3b8;
+  --real: #0284c7;
+  --real-ink: #ffffff;
+  --ok: #16a34a;
+  --ok-soft: #dcfce7;
+  --warn-c: #d97706;
+  --warn-soft: #fef3c7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.06), 0 2px 4px -2px rgba(0,0,0,0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.03);
+  color-scheme: light;
+}
+
+/* Mode Gelap Otomatis (jika sistem dark & tidak dipaksa light) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120;
+    --surface: #131d31;
+    --surface-alt: #1a2742;
+    --surface-hover: #223254;
+    --ink: #f8fafc;               /* Teks putih terang pada latar gelap */
+    --ink-secondary: #cbd5e1;
+    --muted: #94a3b8;
+    --line: #24344d;
+    --line-strong: #334869;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-ink: #0b1120;
+    --accent-soft: rgba(59, 130, 246, 0.16);
+    --head: #17233b;
+    --bar: #334e68;
+    --real: #38bdf8;
+    --real-ink: #082f49;
+    --ok: #22c55e;
+    --ok-soft: rgba(34, 197, 94, 0.16);
+    --warn-c: #fbbf24;
+    --warn-soft: rgba(251, 191, 36, 0.16);
+    --danger: #f87171;
+    --danger-soft: rgba(248, 113, 113, 0.16);
+    --input-bg: #1a2742;
+    --input-border: #334869;
+    --input-text: #f8fafc;        /* Teks putih di dalam form pada latar gelap */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.35);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.45);
+    color-scheme: dark;
+  }
+}
+
+/* Mode Gelap Eksplisit */
+html[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #131d31;
+  --surface-alt: #1a2742;
+  --surface-hover: #223254;
+  --ink: #f8fafc;
+  --ink-secondary: #cbd5e1;
+  --muted: #94a3b8;
+  --line: #24344d;
+  --line-strong: #334869;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-ink: #0b1120;
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --head: #17233b;
+  --bar: #334e68;
+  --real: #38bdf8;
+  --real-ink: #082f49;
+  --ok: #22c55e;
+  --ok-soft: rgba(34, 197, 94, 0.16);
+  --warn-c: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, 0.16);
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.16);
+  --input-bg: #1a2742;
+  --input-border: #334869;
+  --input-text: #f8fafc;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.35);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.45);
+  color-scheme: dark;
+}
+
+/* Mode Terang Eksplisit */
+html[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --surface-hover: #e2e8f0;
+  --ink: #0f172a;
+  --ink-secondary: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --head: #f1f5f9;
+  --bar: #94a3b8;
+  --real: #0284c7;
+  --real-ink: #ffffff;
+  --ok: #16a34a;
+  --ok-soft: #dcfce7;
+  --warn-c: #d97706;
+  --warn-soft: #fef3c7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14.5px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.wrap { max-width: 1160px; margin: 0 auto; padding: 24px 20px 60px; }
+
+/* Modern App Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.brand-group { display: flex; align-items: center; gap: 14px; }
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 1.5px solid var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.15);
+}
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+.brand-desc { font-size: 0.84rem; color: var(--muted); margin-top: 2px; }
+.brand-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  text-transform: uppercase;
+}
+.top-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+h1 { font-size: 1.35rem; margin: 0 0 6px; font-weight: 800; color: var(--ink); }
+h2 {
+  font-size: 1.1rem;
+  margin: 26px 0 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+.sub { color: var(--muted); margin: 0 0 14px; max-width: 70ch; font-size: 0.88rem; }
+
+/* Tip & Alert Banner */
+.warn, .alert-tip {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  padding: 13px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.alert-tip strong { color: var(--ink); }
+
+/* Segmented Modern Navigation Tabs */
+.tabs {
+  display: flex;
+  background: var(--surface-alt);
+  padding: 5px;
+  border-radius: var(--radius-md);
+  gap: 5px;
+  margin-bottom: 22px;
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+.tabs button {
+  flex: 1;
+  min-width: 145px;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.tabs button:hover {
+  color: var(--ink);
+  background: var(--surface-hover);
+}
+.tabs button[aria-selected=true] {
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+}
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+section[hidden] { display: none; }
+
+/* Modern Cards & Boxes */
+.box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+.card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Modern Tables */
+table { width: 100%; border-collapse: collapse; min-width: 680px; }
+th, td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+th {
+  background: var(--head);
+  font-weight: 700;
+  font-size: 0.76rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) td { background: var(--surface-alt); }
+tbody tr:hover td { background: var(--surface-hover); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Modern Form Controls with Perfect Contrast */
+input, select, textarea {
+  font: inherit;
+  color: var(--input-text);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  width: 100%;
+  transition: all 0.15s ease;
+  font-size: 0.88rem;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  background: var(--surface);
+  color: var(--ink);
+}
+td input {
+  text-align: right;
+  min-width: 64px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 4px 7px;
+}
+.muted { color: var(--muted); font-size: 0.84rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 7px 13px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+.btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.btn.primary {
+  background: var(--accent);
+  color: #ffffff !important;
+  border-color: var(--accent);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+}
+.btn.primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.35);
+}
+.btn.alt {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn.alt:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+.btn.success {
+  background: var(--ok);
+  color: #ffffff !important;
+  border-color: var(--ok);
+}
+.btn.success:hover { background: #15803d; }
+.btn:active { transform: translateY(0); }
+td select { max-width: 150px; font-size: 0.84rem; background: var(--surface); color: var(--ink); padding: 4px 6px; }
+.x { background: none; border: 0; color: var(--danger); font-size: 1.1rem; cursor: pointer; padding: 0 6px; line-height: 1; border-radius: 3px; }
+.x:hover { background: var(--danger-soft); }
+td input.mn { border-color: var(--warn-c); background: rgba(217, 119, 6, 0.05); }
+.tot td { font-weight: 700; background: var(--surface-alt); }
+.grand td { font-size: 1.05rem; font-weight: 800; background: var(--head); color: var(--ink); }
+
+/* Progress & KPI */
+.pct-bar-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.pct-val { min-width: 46px; text-align: right; font-weight: 600; color: var(--ink); }
+.pct-track { width: 64px; height: 6px; background: var(--surface-alt); border-radius: 999px; overflow: hidden; border: 1px solid var(--line); }
+.pct-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 16px 0 22px; }
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  color: var(--ink);
+}
+.kpi::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent); }
+.kpi:nth-child(2)::before { background: var(--ok); }
+.kpi:nth-child(3)::before { background: var(--real); }
+.kpi:nth-child(4)::before { background: var(--warn-c); }
+.kpi .lbl { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.03em; }
+.kpi .val { font-size: 1.25rem; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; width: fit-content; }
+.badge.ok { background: var(--ok-soft); color: var(--ok); }
+.badge.warn { background: var(--warn-soft); color: var(--warn-c); }
+.badge.danger { background: var(--danger-soft); color: var(--danger); }
+
+/* Parameter Grid */
+.param-section-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+.param-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+.param-card-head { margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.param-card-title { font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+.param-card-desc { font-size: 0.84rem; color: var(--muted); margin-top: 2px; }
+.param-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 12px;
+}
+.param-item { display: flex; flex-direction: column; gap: 4px; }
+.param-lbl { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+
+/* Spanduk Ilustrasi Konstruksi dengan Teks Kontras Tinggi */
+.illust-banner {
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+}
+.illust-banner-text { flex: 1; }
+.illust-banner-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #ffffff !important;
+  letter-spacing: -0.01em;
+}
+.illust-banner-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #e2e8f0 !important;
+  opacity: 0.95;
+}
+.illust-banner-desc strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+.illust-banner-svg { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+
+/* Kartu Perbandingan Atap */
+.roof-compare-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+.roof-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.roof-type-box {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  background: var(--surface-alt);
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.roof-type-box.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.roof-type-title { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; color: var(--ink); }
+.roof-type-desc { font-size: 0.84rem; color: var(--muted); margin: 6px 0 0; line-height: 1.55; }
+.roof-type-desc strong { color: var(--ink); }
+
+/* Derived Tiles */
+.der-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.der-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--ink);
+}
+.der-icon { font-size: 1.6rem; flex-shrink: 0; }
+.der-body .k { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+.der-body .v { font-size: 1.12rem; font-weight: 800; color: var(--ink); }
+.der-body .sub { font-size: 0.76rem; color: var(--muted); }
+
+/* Kurva S & Chart */
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 14px; box-shadow: var(--shadow-sm); }
+.gl { stroke: var(--line); stroke-width: 1; }
+.tx { fill: var(--muted); font-size: 11px; }
+.bb { fill: var(--bar); opacity: 0.75; }
+.ln { stroke: var(--accent); fill: none; stroke-width: 2.8; }
+.ln-act { stroke: var(--real); fill: none; stroke-width: 2.8; }
+.dot { fill: var(--accent); }
+.dot-act { fill: var(--real); }
+.leg { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.84rem; color: var(--ink); margin-top: 10px; }
+.leg span { display: flex; align-items: center; gap: 6px; }
+.leg i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; }
+
+/* Gantt Chart */
+.gt-tb { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.gt-tb th, .gt-tb td { padding: 5px 6px; border: 1px solid var(--line); vertical-align: middle; color: var(--ink); }
+.gt-tb th { background: var(--head); font-weight: 700; text-align: center; color: var(--muted); }
+.gt-th-wk { min-width: 44px; font-size: 0.78rem; padding: 4px 2px; }
+.gt-div-row td { background: var(--surface-alt); font-weight: 700; font-size: 0.84rem; color: var(--ink); }
+.gt-cell { text-align: center; padding: 2px; }
+.gt-bar {
+  background: var(--accent);
+  color: #ffffff !important;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 4px;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 30px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.gt-foot td { font-weight: 700; font-size: 0.82rem; background: var(--surface); color: var(--ink); }
+
+/* ==========================================================================
+   KOP DOKUMEN & LEMBAR PENGESAHAN (ADAPTIF TERANG / GELAP / PRINT)
+   ========================================================================== */
+.doc-header {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.kop-edit-notice {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.kop-notice-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.edit-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.edit-tip { font-size: 0.84rem; color: var(--ink); font-weight: 500; }
+.instansi-presets { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.preset-lbl { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.btn-preset {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 5px 11px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-preset:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.kop-main {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+.kop-logo-wrap {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.kop-logo-box {
+  width: 72px;
+  height: 72px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  transition: all 0.15s ease;
+}
+.kop-logo-box:hover { border-color: var(--accent); background: var(--accent-soft); }
+.kop-text { flex: 1; text-align: center; }
+
+.doc-instansi {
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.doc-sub {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-top: 3px;
+  font-weight: 500;
+}
+.doc-line {
+  border-top: 3px double var(--line-strong);
+  margin: 14px 0 16px;
+}
+.doc-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.doc-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px 30px;
+  font-size: 0.88rem;
+}
+.doc-meta-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--line);
+  padding: 4px 0;
+}
+.doc-meta-item span.k { color: var(--muted); }
+.doc-meta-item span.v { font-weight: 700; color: var(--ink); }
+
+/* Kolom Tanda Tangan */
+.sig-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.sig-col {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+.sig-title { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+.sig-role { font-size: 0.88rem; font-weight: 700; margin-top: 2px; color: var(--ink); }
+.sig-space {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sig-stamp-placeholder {
+  font-size: 0.72rem;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.sig-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--ink);
+}
+.sig-id { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+
+/* Inline Edit Focus & Hover States */
+.inline-edit {
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+  transition: all 0.15s ease;
+  position: relative;
+  min-height: 1.2em;
+}
+.inline-edit:hover {
+  background: var(--accent-soft);
+  outline: 1.5px dashed var(--accent);
+  cursor: text;
+}
+.inline-edit:focus {
+  background: var(--surface);
+  color: var(--ink);
+  outline: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Canvas Gelombang Kursor */
+#cursorWaveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Pratinjau Cetak Mode */
+#prevBanner {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+body.preview-mode { background: #334155 !important; }
+body.preview-mode .wrap {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --surface-hover: #f1f5f9;
+  --ink: #0f172a !important;
+  --ink-secondary: #334155 !important;
+  --muted: #64748b !important;
+  --line: #cbd5e1 !important;
+  --line-strong: #94a3b8 !important;
+  --input-bg: #ffffff !important;
+  --input-text: #0f172a !important;
+  --head: #f1f5f9 !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+  border-radius: var(--radius-md);
+  max-width: 1120px;
+  padding: 36px;
+  margin: 24px auto;
+}
+body.preview-mode .wrap * {
+  border-color: #cbd5e1;
+}
+body.preview-mode .app-header, body.preview-mode .tabs, body.preview-mode .topbtn,
+body.preview-mode .warn, body.preview-mode .alert-tip, body.preview-mode .act-actions,
+body.preview-mode #docSettings, body.preview-mode .no-print {
+  display: none !important;
+}
+body.preview-mode input, body.preview-mode select { border: 0 !important; background: none !important; padding: 0 !important; color: #0f172a !important; }
+body.preview-mode.print-ringkasan #t-par, body.preview-mode.print-ringkasan #t-pek, body.preview-mode.print-ringkasan #t-hrg { display: none !important; }
+body.preview-mode.print-ringkasan #t-has { display: block !important; }
+body.preview-mode.print-lengkap section { display: block !important; margin-bottom: 30px; }
+
+/* Print CSS (Selalu Putih Bersih & Tinta Hitam Pekat Standar Dokumen A4) */
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --ink: #000000;
+    --muted: #444444;
+    --line: #999999;
+    --head: #eeeeee;
+    --bar: #999999;
+    --accent: #1e3a8a;
+    --real: #0284c7;
+  }
+  @page { margin: 10mm 12mm; }
+  body { background: #ffffff !important; color: #000000 !important; font-size: 10px !important; }
+  .wrap { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .app-header, .tabs, .bar, .topbtn, .warn, .alert-tip, textarea, .act-actions,
+  #docSettings, #prevBanner, .no-print, .illust-banner, #cursorWaveCanvas {
+    display: none !important;
+  }
+  .inline-edit { outline: none !important; background: transparent !important; padding: 0 !important; margin: 0 !important; color: #000000 !important; }
+  .doc-header { border: 1px solid #777 !important; background: #ffffff !important; color: #000000 !important; padding: 12px 16px !important; margin-bottom: 12px !important; }
+  .doc-instansi, .doc-title, .doc-sub, .doc-meta-item span.v, .sig-role, .sig-name { color: #000000 !important; }
+  .doc-line { border-top: 2px double #000000 !important; }
+  .sig-col { border: 1px solid #777 !important; background: #ffffff !important; color: #000000 !important; }
+  .box { overflow: visible !important; border: 1px solid #888 !important; border-radius: 0 !important; }
+  table { width: 100% !important; min-width: 0 !important; font-size: 9px !important; }
+  th, td { padding: 4px 5px !important; border-color: #888 !important; color: #000000 !important; }
+  th { background: #f0f0f0 !important; color: #000000 !important; }
+  .gt-tb { font-size: 8px !important; }
+  .gt-bar { font-size: 7.5px !important; padding: 1px 2px !important; box-shadow: none !important; }
+  .chart { background: #ffffff !important; border: 1px solid #888 !important; padding: 6px !important; }
+  .chart svg { max-height: 260px !important; }
+  .kpis { gap: 6px !important; margin: 8px 0 !important; }
+  .kpi { padding: 6px 10px !important; border: 1px solid #888 !important; background: #ffffff !important; color: #000000 !important; }
+  .kpi .val { font-size: 0.95rem !important; color: #000000 !important; }
+  input, select { border: 0 !important; background: none !important; padding: 0 !important; appearance: none; color: #000000 !important; }
+  h1, h2 { break-after: avoid; }
+  .sig-block { break-inside: avoid; page-break-inside: avoid; margin-top: 20px; }
+}
+
+</style>
+</head>
+<body>
+<div id="prevBanner" style="display:none">
+  <div><strong>📄 Mode Pratinjau Cetak Aktif</strong> — Menampilkan format kertas A4 sebelum dicetak ke PDF</div>
+  <div style="display:flex;gap:8px">
+    <button class="btn primary" id="prevPrintBtn" style="padding:6px 14px">🖨️ Cetak Sekarang</button>
+    <button class="btn alt" id="prevCloseBtn" style="padding:6px 14px;background:#334155;color:#f8fafc;border-color:#64748b">✕ Keluar Pratinjau</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- Modern App Header -->
+  <header class="app-header">
+    <div class="brand-group">
+      <div class="brand-icon">🏗️</div>
+      <div>
+        <div class="brand-title">
+          ESTICON <span style="font-size:.78rem;font-weight:600;opacity:.88;letter-spacing:.02em">(ESTIMATOR KONSTRUKSI)</span>
+          <span class="brand-badge">Edisi Magelang 2026</span>
+        </div>
+        <div class="brand-desc">Aplikasi RAB &amp; Kurva S Konstruksi (Gedung 1–10 Lantai &amp; Rumah Tinggal 1–3 Lantai) · Standar HSP Magelang &amp; AHSP PUPR</div>
+      </div>
+    </div>
+    <div class="top-actions topbtn">
+      <button class="btn alt" id="themeToggleBtn" type="button" title="Ganti Mode Tampilan (Terang / Gelap / Sistem)">☀️ Mode: Terang</button>
+      <button class="btn alt" id="cursorWaveBtn" type="button" title="Aktifkan/Matikan bantuan pelacak gelombang kursor">🌊 Bantuan Kursor: ON</button>
+      <button class="btn alt" id="openBtn" title="Buka proyek dari file .json">📁 Buka Proyek</button>
+      <input type="file" id="openFile" accept=".json" hidden>
+      <button class="btn alt" id="saveBtn" title="Simpan proyek ke format .json">💾 Simpan Proyek</button>
+      <button class="btn alt" id="docBtn" title="Buka/tutup pengaturan Kop & Lembar Pengesahan">⚙️ Kop & Pengesahan</button>
+      <button class="btn alt" id="prevBtn" title="Lihat tata letak cetak dokumen A4">👁️ Pratinjau Cetak</button>
+      <button class="btn primary" id="prtBtn" title="Cetak langsung atau simpan dokumen ke PDF">🖨️ Cetak / PDF</button>
+    </div>
+  </header>
+
+  <!-- Pengaturan Kop & Lembar Pengesahan -->
+  <details id="docSettings" class="card" style="margin-bottom:20px;display:none">
+    <summary style="font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between">
+      <span>⚙️ Pengaturan Kop Dokumen & Lembar Pengesahan Resmi</span>
+      <span class="muted" style="font-size:.82rem">Klik untuk tutup panel</span>
+    </summary>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:14px">
+      <div class="grid">
+        <label>Instansi / Universitas<input id="d_instansi"></label>
+        <label>Fakultas / Program Studi<input id="d_sub"></label>
+        <label>Judul Dokumen Laporan<input id="d_judul"></label>
+        <label>Nomor Dokumen<input id="d_noDoc"></label>
+        <label>Lokasi Pekerjaan<input id="d_lokasi"></label>
+        <label>Tanggal Dokumen (kosong = otomatis)<input id="d_tgl"></label>
+        <label>Cakupan Cetak
+          <select id="d_scope">
+            <option value="ringkasan">Laporan Utama (RAB, Barchart, Kurva S, Pengesahan)</option>
+            <option value="lengkap">Laporan Lengkap (Semua Tab + Parameter & AHSP)</option>
+          </select>
+        </label>
+        <label>Orientasi Cetak
+          <select id="d_orient">
+            <option value="landscape">Landscape (Disarankan untuk Barchart)</option>
+            <option value="portrait">Portrait</option>
+          </select>
+        </label>
+      </div>
+
+      <label style="display:flex;flex-direction:row;align-items:center;gap:8px;font-weight:700;margin-top:4px">
+        <input type="checkbox" id="d_showSig" style="width:auto"> Sertakan Lembar Pengesahan (3 Kolom Tanda Tangan Resmi)
+      </label>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div class="box" style="padding:14px">
+          <strong>Pihak 1 (Penyusun / Mahasiswa)</strong>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+            <label>Status<input id="d_p1_jab"></label>
+            <label>Peran<input id="d_p1_peran"></label>
+            <label>Nama<input id="d_p1_nm"></label>
+            <label>No. Identitas / NIM<input id="d_p1_id"></label>
+          </div>
+        </div>
+        <div class="box" style="padding:14px">
+          <strong>Pihak 2 (Pemeriksa / Asisten)</strong>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+            <label>Status<input id="d_p2_jab"></label>
+            <label>Peran<input id="d_p2_peran"></label>
+            <label>Nama<input id="d_p2_nm"></label>
+            <label>No. Identitas / NIP<input id="d_p2_id"></label>
+          </div>
+        </div>
+        <div class="box" style="padding:14px">
+          <strong>Pihak 3 (Pengesah / Dosen)</strong>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+            <label>Status<input id="d_p3_jab"></label>
+            <label>Peran<input id="d_p3_peran"></label>
+            <label>Nama<input id="d_p3_nm"></label>
+            <label>No. Identitas / NIP<input id="d_p3_id"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- Info Ringkas & Modern -->
+  <div class="alert-tip">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <div>
+        <strong>💡 Acuan Harga Resmi:</strong> Persiapan, tanah, dan beton struktur terhubung langsung ke <strong>HSP Magelang 2026</strong>. Komponen bekisting struktur telah dilengkapi harga standar wajar <strong>Rp 220.000 / m²</strong> (pondasi) & <strong>Rp 280.000 / m²</strong> (struktur atas).
+      </div>
+      <button class="btn alt" id="toggleInfoBtn" style="padding:3px 10px;font-size:.76rem">Rincian Acuan ▾</button>
+    </div>
+    <div id="infoDetail" style="display:none;font-size:.82rem;color:var(--muted);padding-top:8px;border-top:1px dashed var(--line);margin-top:4px">
+      Pekerjaan arsitektur, MEP, dan finishing menggunakan harga satuan contoh realistis yang dapat disesuaikan pada tab <em>Pekerjaan & Jadwal</em> atau diimpor lewat CSV pada tab <em>Harga & AHSP</em>. Jika memilih Kabupaten atau Kota Magelang di Tab Parameter, harga material beton & tanah otomatis tersinkronisasi.
+    </div>
+  </div>
+
+  <!-- Segmented Navigation Tabs -->
+  <div class="tabs" role="tablist">
+    <button role="tab" data-t="par" aria-selected="true">1. Parameter Proyek</button>
+    <button role="tab" data-t="pek" aria-selected="false">2. Pekerjaan & Jadwal</button>
+    <button role="tab" data-t="hrg" aria-selected="false">3. Harga Satuan & AHSP</button>
+    <button role="tab" data-t="has" aria-selected="false">4. Hasil RAB & Kurva S</button>
+  </div>
+
+  <!-- TAB 1: PARAMETER -->
+  <section id="t-par">
+        <!-- Spanduk Ilustrasi Konstruksi Hero (Tab 1) -->
+    <div class="illust-banner no-print">
+      <div class="illust-banner-text">
+        <div class="illust-banner-title">ESTICON — Estimator Konstruksi &amp; Penjadwalan Kurva S</div>
+        <div class="illust-banner-desc">
+          Perhitungan terpadu Rencana Anggaran Biaya (RAB) dan Kurva S berbasis data resmi <strong>HSP Magelang 2026</strong> &amp; standar <strong>AHSP Permen PUPR No. 1/2022</strong>. Dilengkapi opsi khusus <strong>Gedung Bertingkat (1–10 Lantai)</strong> dan <strong>Rumah Tinggal (1–3 Lantai)</strong> dengan rincian biaya atap lengkap.
+        </div>
+      </div>
+      <div class="illust-banner-svg">
+        <svg class="illust-banner-svg" width="160" height="110" viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Perencanaan Konstruksi">
+          <rect x="5" y="5" width="150" height="100" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <line x1="20" y1="5" x2="20" y2="105" stroke="#1e40af" stroke-width="1"/>
+          <line x1="50" y1="5" x2="50" y2="105" stroke="#1e40af" stroke-width="1"/>
+          <line x1="80" y1="5" x2="80" y2="105" stroke="#1e40af" stroke-width="1"/>
+          <line x1="110" y1="5" x2="110" y2="105" stroke="#1e40af" stroke-width="1"/>
+          <line x1="140" y1="5" x2="140" y2="105" stroke="#1e40af" stroke-width="1"/>
+          <line x1="5" y1="30" x2="155" y2="30" stroke="#1e40af" stroke-width="1"/>
+          <line x1="5" y1="60" x2="155" y2="60" stroke="#1e40af" stroke-width="1"/>
+          <line x1="5" y1="85" x2="155" y2="85" stroke="#1e40af" stroke-width="1"/>
+          <polygon points="40,95 40,45 65,30 90,45 90,95" fill="none" stroke="#60a5fa" stroke-width="2"/>
+          <line x1="65" y1="30" x2="65" y2="95" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="40" y1="62" x2="90" y2="62" stroke="#60a5fa" stroke-width="1.2"/>
+          <line x1="40" y1="78" x2="90" y2="78" stroke="#60a5fa" stroke-width="1.2"/>
+          <line x1="115" y1="95" x2="115" y2="20" stroke="#f97316" stroke-width="2.5"/>
+          <line x1="95" y1="20" x2="145" y2="20" stroke="#f97316" stroke-width="2"/>
+          <polygon points="115,20 125,12 135,20" fill="#f97316"/>
+          <line x1="135" y1="20" x2="135" y2="40" stroke="#fb923c" stroke-width="1" stroke-dasharray="2 2"/>
+          <rect x="131" y="40" width="8" height="6" fill="#fbbf24"/>
+          <polygon points="15,95 65,95 15,35" fill="#f59e0b" fill-opacity="0.9" stroke="#d97706" stroke-width="1.5"/>
+          <polygon points="22,90 48,90 22,58" fill="#172554"/>
+          <path d="M 85 92 C 85 78 115 78 115 92 Z" fill="#eab308" stroke="#ca8a04" stroke-width="1.5"/>
+          <path d="M 81 92 L 119 92 C 120 94 116 96 100 96 C 84 96 80 94 81 92 Z" fill="#ca8a04"/>
+          <rect x="97" y="81" width="6" height="4" rx="1" fill="#fef08a"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Perbandingan Karakteristik Struktur & Biaya Atap -->
+    <div class="roof-compare-card no-print">
+      <div class="card-title">
+        <span>📐 Panduan Perbedaan Struktur: Gedung Bertingkat vs Rumah Tinggal</span>
+        <span class="badge ok">Acuan Teknis Sipil</span>
+      </div>
+      <div class="roof-compare-grid">
+        <div class="roof-type-box" id="roofTypeGedung">
+          <div class="roof-type-title">🏢 1. Gedung Bertingkat / Kantor (1–10 Lantai)</div>
+          <div class="roof-type-desc">
+            • <strong>Sistem Penutup Atap:</strong> Plat dak beton bertulang (fc' 25–30 MPa) tebal 12–15 cm + waterproofing membrane &amp; parapet dinding pembatas keliling.<br>
+            • <strong>Kebutuhan Struktur:</strong> Portal kaku beton bertulang (0.28 m³/m² LT), kolom praktis/struktural berat, pembesian D13–D25, dan tangga darurat.<br>
+            • <strong>Estimasi Biaya Acuan:</strong> Rp 3.500.000 – Rp 5.500.000 / m² luas lantai.
+          </div>
+        </div>
+        <div class="roof-type-box" id="roofTypeRumah">
+          <div class="roof-type-title">🏡 2. Bangunan Rumah Tinggal (1–3 Lantai)</div>
+          <div class="roof-type-desc">
+            • <strong>Sistem Penutup Atap:</strong> Atap miring (30°–35°) rangka Truss baja ringan C75 &amp; reng, penutup genteng keramik/beton/metal, nok/wuwungan genteng, dan lisplank keliling overstek 0.8m.<br>
+            • <strong>Kebutuhan Struktur:</strong> Pondasi batu belah menerus + footplate, sloof, kolom praktis, dan ringbalk beton (0.20 m³/m² LT).<br>
+            • <strong>Estimasi Biaya Acuan:</strong> Rp 3.000.000 – Rp 4.500.000 / m² luas lantai.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pf"></div>
+    <h2>Nilai Turunan Dimensi (Dihitung Otomatis)</h2>
+    <div class="der-grid" id="derTiles"></div>
+    <div class="box" style="display:none"><table id="tbD"><tbody></tbody></table></div>
+    <p class="muted">Luas dinding bersih dihitung dari keliling bangunan dikalikan tinggi, jumlah lantai, dan faktor sekat, lalu dikurangi luas seluruh bukaan (pintu & jendela). Pengubahan jumlah lantai menyusun ulang jadwal otomatis.</p>
+  </section>
+
+  <!-- TAB 2: PEKERJAAN & JADWAL -->
+  <section id="t-pek" hidden>
+        <!-- Spanduk Ilustrasi Konstruksi Lapangan (Tab 2) -->
+    <div class="illust-banner no-print" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);">
+      <div class="illust-banner-text">
+        <div class="illust-banner-title">Pelaksanaan Pekerjaan &amp; Penjadwalan Waktu (Time Schedule)</div>
+        <div class="illust-banner-desc">
+          Rangkaian divisi pekerjaan konstruksi mulai dari pembersihan, galian pondasi, struktur beton bertulang, dinding arsitektur, hingga atap dan MEP. Durasi dan logika ketergantungan (predecessor &amp; jeda) otomatis disusun berurutan.
+        </div>
+      </div>
+      <div class="illust-banner-svg">
+        <svg class="illust-banner-svg" width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Pelaksanaan Lapangan">
+          <line x1="5" y1="88" x2="155" y2="88" stroke="#64748b" stroke-width="2"/>
+          <polygon points="5,88 155,88 155,98 5,98" fill="#334155" opacity="0.4"/>
+          <rect x="25" y="75" width="38" height="12" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+          <circle cx="32" cy="81" r="4" fill="#64748b"/>
+          <circle cx="44" cy="81" r="4" fill="#64748b"/>
+          <circle cx="56" cy="81" r="4" fill="#64748b"/>
+          <polygon points="30,75 32,55 52,55 58,75" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+          <rect x="36" y="58" width="10" height="10" fill="#93c5fd" opacity="0.8"/>
+          <polyline points="52,65 72,40 85,62" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+          <polygon points="85,62 92,68 85,76 78,72" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
+          <rect x="115" y="35" width="22" height="53" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+          <line x1="119" y1="18" x2="119" y2="35" stroke="#1e293b" stroke-width="2"/>
+          <line x1="126" y1="15" x2="126" y2="35" stroke="#1e293b" stroke-width="2"/>
+          <line x1="133" y1="18" x2="133" y2="35" stroke="#1e293b" stroke-width="2"/>
+          <line x1="116" y1="23" x2="136" y2="23" stroke="#b91c1c" stroke-width="1.2"/>
+          <line x1="116" y1="29" x2="136" y2="29" stroke="#b91c1c" stroke-width="1.2"/>
+          <rect x="98" y="70" width="14" height="6" fill="#ea580c" stroke="#9a3412" stroke-width="0.8"/>
+          <rect x="98" y="76" width="14" height="6" fill="#ea580c" stroke="#9a3412" stroke-width="0.8"/>
+          <rect x="98" y="82" width="14" height="6" fill="#ea580c" stroke="#9a3412" stroke-width="0.8"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Panel Generator Jadwal Otomatis & Kalender Pelaksanaan -->
+    <div class="card no-print" id="schedControlCard" style="margin-bottom:20px;border-left:4px solid var(--accent)">
+      <div class="card-title" style="margin-bottom:12px">
+        <span style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:1.25rem">⚡</span>
+          <span>Generator Jadwal Otomatis &amp; Kalender Pelaksanaan (Time Schedule)</span>
+        </span>
+        <span class="brand-badge" style="font-size:0.75rem">Fitur Baru · Standar CPM &amp; AHSP</span>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start">
+        <!-- Opsi A: Target Durasi & Preset Waktu -->
+        <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px">
+          <div style="font-weight:700;font-size:0.92rem;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+            <span>⏱️</span> Target Waktu Pelaksanaan Proyek
+          </div>
+          <div class="muted" style="font-size:0.8rem;margin-bottom:10px">
+            Tentukan total target durasi pelaksanaan. Durasi pekerjaan tiap divisi akan dihitung proporsional secara otomatis.
+          </div>
+          
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+            <label style="font-size:0.84rem;font-weight:600">Target Durasi:</label>
+            <input type="number" id="autoTargetWeeks" min="4" max="104" value="16" style="width:75px;font-weight:700;text-align:center" aria-label="Target Durasi Minggu">
+            <span style="font-size:0.85rem;font-weight:600">Minggu</span>
+            <button class="btn primary" id="applyAutoSchedBtn" type="button" style="padding:6px 14px;font-size:0.82rem">⚡ Susun Otomatis</button>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+            <span class="muted" style="font-size:0.78rem;font-weight:600">Preset Cepat:</span>
+            <button class="btn alt btn-sched-preset" type="button" data-sched-weeks="12" style="padding:3px 8px;font-size:0.76rem" title="Target Cepat 12 Minggu">🚀 Cepat (12 Mgg)</button>
+            <button class="btn alt btn-sched-preset" type="button" data-sched-weeks="16" style="padding:3px 8px;font-size:0.76rem" title="Standar PUPR 16 Minggu">⚖️ Standar (16 Mgg)</button>
+            <button class="btn alt btn-sched-preset" type="button" data-sched-weeks="20" style="padding:3px 8px;font-size:0.76rem" title="Menengah 20 Minggu">🏗️ 20 Mgg</button>
+            <button class="btn alt btn-sched-preset" type="button" data-sched-weeks="24" style="padding:3px 8px;font-size:0.76rem" title="Ekstensif 24 Minggu">🏢 Besar (24 Mgg)</button>
+          </div>
+        </div>
+
+        <!-- Opsi B: Kalender Mulai Proyek (SPMK & PHO) -->
+        <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px">
+          <div style="font-weight:700;font-size:0.92rem;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+            <span>📅</span> Kalender Pelaksanaan (SPMK &amp; PHO)
+          </div>
+          <div class="muted" style="font-size:0.8rem;margin-bottom:10px">
+            Masukkan tanggal mulai kontrak (SPMK) untuk memetakan tanggal kalender nyata pada tabel jadwal, Gantt chart, dan kurva S.
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+            <label style="font-size:0.84rem;font-weight:600">Tanggal Mulai (SPMK):</label>
+            <input type="date" id="projStartDate" style="width:145px;font-size:0.82rem;font-weight:600" aria-label="Tanggal Mulai Proyek">
+          </div>
+
+          <div id="calendarInfoBox" style="font-size:0.82rem;line-height:1.6;border-top:1px dashed var(--line);padding-top:8px">
+            <div>🏁 <strong>Estimasi Serah Terima (PHO):</strong> <span id="calcPhoDate" style="color:var(--accent);font-weight:700">-</span></div>
+            <div class="muted">📊 <strong>Total Waktu Kalender:</strong> <span id="calcTotalDays">-</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pek"></div>
+    
+    <div class="card" style="margin-top:20px">
+      <div class="card-title">
+        <span>➕ Tambah Pekerjaan Manual</span>
+        <span class="muted" style="font-weight:normal;font-size:.78rem">Untuk pekerjaan di luar template (mis. tangga, lift, genset, fire protection)</span>
+      </div>
+      <div class="bar" style="margin:0">
+        <select id="mDiv" style="width:auto" aria-label="Divisi">
+          <option value="0">1. Persiapan</option>
+          <option value="1">2. Struktur</option>
+          <option value="2">3. Arsitektur</option>
+          <option value="3">4. MEP</option>
+          <option value="4">5. Finishing</option>
+        </select>
+        <input id="mNm" placeholder="Nama pekerjaan manual" style="width:230px" aria-label="Nama pekerjaan">
+        <input id="mSat" placeholder="Satuan (m², unit, dll)" style="width:130px" aria-label="Satuan">
+        <input id="mVol" type="number" step="any" placeholder="Volume" style="width:110px" aria-label="Volume">
+        <input id="mHrg" type="number" step="any" placeholder="Harga satuan (Rp)" style="width:160px" aria-label="Harga satuan">
+        <button class="btn primary" id="addManual">Tambah Item</button>
+      </div>
+    </div>
+
+    <div class="bar">
+      <button class="btn alt" id="jdBtn">⚡ Susun Jadwal Otomatis</button>
+      <button class="btn alt" id="rsBtn">🔄 Reset ke Data Contoh</button>
+    </div>
+    <p class="muted">Volume = nilai dasar × koefisien. Bobot kurva S dibagi rata di sepanjang durasi tiap pekerjaan. Jika kolom "Setelah pekerjaan" diisi, minggu mulai dihitung otomatis berdasarkan pendahulu dan jeda.</p>
+  </section>
+
+  <!-- TAB 3: HARGA & AHSP -->
+  <section id="t-hrg" hidden>
+    <!-- Spanduk Ilustrasi Material & AHSP (Tab 3) -->
+    <div class="illust-banner no-print" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);">
+      <div class="illust-banner-text">
+        <div class="illust-banner-title">Basis Data Harga Satuan &amp; Standar AHSP Magelang 2026</div>
+        <div class="illust-banner-desc">
+          Daftar harga bahan dan upah tenaga kerja mengacu pada data resmi Kabupaten &amp; Kota Magelang. Analisis Harga Satuan Pekerjaan (AHSP) mengadopsi koefisien SNI &amp; Permen PUPR No. 1/2022 lengkap dengan bekisting dan atap.
+        </div>
+      </div>
+      <div class="illust-banner-svg">
+        <svg class="illust-banner-svg" width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Material &amp; AHSP">
+          <polygon points="20,86 48,86 44,60 24,60" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+          <rect x="25" y="68" width="18" height="8" fill="#1e40af"/>
+          <text x="27" y="74" fill="#ffffff" font-size="5" font-weight="bold">SEMEN</text>
+          <polygon points="35,86 63,86 59,62 39,62" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+          <rect x="40" y="70" width="18" height="8" fill="#b91c1c"/>
+          <text x="42" y="76" fill="#ffffff" font-size="5" font-weight="bold">PUPR</text>
+          <path d="M 65 86 L 65 35 L 75 35 L 75 42 L 70 42 L 70 86 Z" fill="#60a5fa" stroke="#2563eb" stroke-width="1.2"/>
+          <text x="68" y="28" fill="#1e3a8a" font-size="7" font-weight="bold">C75</text>
+          <circle cx="118" cy="52" r="28" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+          <circle cx="118" cy="52" r="23" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 2"/>
+          <polygon points="118,34 122,44 133,44 124,51 127,61 118,55 109,61 112,51 103,44 114,44" fill="#f59e0b"/>
+          <text x="118" y="68" text-anchor="middle" fill="#1e40af" font-size="6.5" font-weight="bold">SNI / AHSP</text>
+          <text x="118" y="74" text-anchor="middle" fill="#475569" font-size="5">PUPR 2026</text>
+        </svg>
+      </div>
+    </div>
+    <!-- Fitur 3: Dedicated Bekisting & Standard Card -->
+    <div class="card" style="border-left:4px solid var(--ok)">
+      <div class="card-title">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span>🪵 Standar Acuan Bekisting Struktur Magelang 2026</span>
+          <span class="badge ok">Fitur 3 Aktif</span>
+        </div>
+        <button class="btn success" id="resetBekistingBtn" style="font-size:.78rem">✨ Terapkan Standar Bekisting & AHSP</button>
+      </div>
+      <p class="muted" style="margin:0 0 12px">
+        HSP Magelang mencakup beton mutu dan pembesian tulangan. Komponen bekisting struktur otomatis dilengkapi harga acuan wajar Magelang agar biaya struktur tidak bernilai nol:
+      </p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:12px">
+        <div class="box" style="padding:12px 14px">
+          <div style="font-weight:700;color:var(--ink)">1. Bekisting Pondasi & Sloof</div>
+          <div style="font-size:.82rem;color:var(--muted);margin-top:2px">Kayu papan bekisting 2–3x pakai, paku, minyak bekisting, dan upah kerja.</div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span class="muted">Harga Acuan Default:</span>
+            <strong style="color:var(--ok);font-size:1.05rem">Rp 220.000 / m²</strong>
+          </div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:3px">Dipakai pada item <strong>s1</strong> (koefisien: 3 m² per m³ beton)</div>
+        </div>
+        <div class="box" style="padding:12px 14px">
+          <div style="font-weight:700;color:var(--ink)">2. Bekisting Struktur Atas (Kolom, Balok, Plat)</div>
+          <div style="font-size:.82rem;color:var(--muted);margin-top:2px">Multiplek 12mm, balok kaso 5/7, scaffolding / perancah dolken, paku, dan upah kerja.</div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span class="muted">Harga Acuan Default:</span>
+            <strong style="color:var(--ok);font-size:1.05rem">Rp 280.000 / m²</strong>
+          </div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:3px">Dipakai pada item <strong>s2</strong> (koefisien: 6 m² per m³ beton)</div>
+        </div>
+      </div>
+      <details style="font-size:.82rem;color:var(--muted)">
+        <summary style="cursor:pointer;font-weight:600;color:var(--accent)">📋 Lihat Analisa Koefisien Bekisting per 1 m² (Permen PUPR No. 1/2022)</summary>
+        <div style="margin-top:8px;padding:10px 14px;background:var(--surface-alt);border-radius:6px;line-height:1.6">
+          • <strong>Multiplek 12 mm:</strong> 0.350 lembar<br>
+          • <strong>Kayu Kelas III (Kaso 5/7):</strong> 0.040 m³<br>
+          • <strong>Paku 5 – 10 cm:</strong> 0.400 kg<br>
+          • <strong>Minyak Bekisting:</strong> 0.150 Liter<br>
+          • <strong>Balok Kayu / Scaffolding:</strong> 2 batang / 1 set sewa<br>
+          • <strong>Tenaga Kerja:</strong> Pekerja (0.33 OH), Tukang Kayu (0.33 OH), Kepala Tukang (0.033 OH), Mandor (0.033 OH)
+        </div>
+      </details>
+    </div>
+
+    <h2>Sumber Acuan Harga</h2>
+    <div class="grid" id="srcf"></div>
+
+    <h2>Impor / Ekspor Harga dari CSV</h2>
+    <p class="muted">Format per baris: kode,nama,satuan,harga. Gunakan tombol template untuk mendapatkan daftar seluruh kode yang dipakai.</p>
+    <div class="bar">
+      <input type="file" id="csvFile" accept=".csv,.txt" aria-label="Pilih file CSV harga" style="width:auto">
+      <button class="btn alt" id="tplBtn">📥 Unduh Template CSV</button>
+    </div>
+    <textarea id="impTxt" aria-label="Tempel CSV harga" placeholder="semen,Semen,kg,1650" style="width:100%;min-height:80px"></textarea>
+    <div class="bar"><button class="btn primary" id="impBtn">Impor Harga</button><span class="muted" id="impMsg"></span></div>
+
+    <h2>Komponen Pekerjaan Berbasis HSP Magelang</h2>
+    <p class="muted">Harga satuan pekerjaan = Σ (koefisien × harga HSP / manual). Kosongkan kode untuk menggunakan harga manual.</p>
+    <div id="kpBox"></div>
+    <datalist id="hspList"></datalist>
+
+    <h2>Harga Bahan & Upah (Pekerjaan Ber-AHSP)</h2>
+    <div class="box"><table id="tbH" style="min-width:420px"><thead><tr><th>Kode</th><th>Bahan / Upah</th><th>Sat.</th><th class="num">Harga Satuan (Rp)</th></tr></thead><tbody></tbody></table></div>
+
+    <h2>Koefisien Analisis Harga Satuan Pekerjaan (AHSP)</h2>
+    <div id="ahsp"></div>
+  </section>
+
+  <!-- TAB 4: HASIL RAB & KURVA S -->
+  <section id="t-has" hidden>
+    <!-- Spanduk Ilustrasi Hasil & Kurva S (Tab 4) -->
+    <div class="illust-banner no-print" style="background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);">
+      <div class="illust-banner-text">
+        <div class="illust-banner-title">Rekapitulasi RAB, Jadwal Barchart &amp; Evaluasi Kurva S</div>
+        <div class="illust-banner-desc">
+          Perhitungan total anggaran biaya proyek, distribusi bobot pekerjaan per minggu, grafik Kurva S rencana vs realisasi fisik, serta lembar dokumen pengesahan resmi yang dapat dicetak langsung ke format A4 landscape / PDF.
+        </div>
+      </div>
+      <div class="illust-banner-svg">
+        <svg class="illust-banner-svg" width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi Hasil RAB &amp; Kurva S">
+          <rect x="15" y="15" width="85" height="72" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+          <line x1="25" y1="75" x2="90" y2="75" stroke="#cbd5e1" stroke-width="1.2"/>
+          <line x1="25" y1="25" x2="25" y2="75" stroke="#cbd5e1" stroke-width="1.2"/>
+          <rect x="30" y="65" width="6" height="10" fill="#94a3b8" opacity="0.6"/>
+          <rect x="42" y="55" width="6" height="20" fill="#94a3b8" opacity="0.6"/>
+          <rect x="54" y="40" width="6" height="35" fill="#94a3b8" opacity="0.6"/>
+          <rect x="66" y="32" width="6" height="43" fill="#94a3b8" opacity="0.6"/>
+          <rect x="78" y="27" width="6" height="48" fill="#94a3b8" opacity="0.6"/>
+          <path d="M 25 75 Q 45 70 54 48 T 88 25" fill="none" stroke="#1e40af" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="88" cy="25" r="3.5" fill="#1e40af"/>
+          <path d="M 25 75 Q 45 74 54 46" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="54" cy="46" r="3" fill="#0284c7"/>
+          <circle cx="125" cy="48" r="22" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+          <path d="M 115 48 L 122 55 L 136 39" fill="none" stroke="#15803d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="125" y="66" text-anchor="middle" fill="#15803d" font-size="6.5" font-weight="bold">APPROVED</text>
+          <text x="125" y="80" text-anchor="middle" fill="#1e3a8a" font-size="7" font-weight="bold">ESTICON</text>
+        </svg>
+      </div>
+    </div>
+    <!-- Kop Dokumen Resmi -->
+    <div class="doc-header" id="printKop"></div>
+
+    <!-- Status Evaluasi Progres Proyek -->
+    <h2>Status Evaluasi Progres Proyek</h2>
+    <div class="kpis" id="kpiBox"></div>
+
+    <!-- Opsi Tambahan -->
+    <div class="opt">
+      <label>Overhead & Profit: <input type="number" step="any" min="0" id="oP"> %</label>
+      <label>PPN: <input type="number" step="any" min="0" id="oN"> %</label>
+      <label><input type="checkbox" id="oH" style="width:auto"> HSP Magelang sudah termasuk overhead & profit</label>
+    </div>
+
+    <!-- Rekapitulasi per Divisi -->
+    <h2>Rekapitulasi RAB per Divisi</h2>
+    <div class="box"><table id="tbR"><thead><tr><th>Divisi Pekerjaan</th><th class="num">Subtotal Biaya</th><th class="num" style="min-width:140px">Bobot (%)</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+    <p class="muted" id="m2" style="margin-top:6px"></p>
+    <p class="muted" id="shNote"></p>
+
+    <!-- Ringkasan Komparasi Sumber Biaya -->
+    <div class="box" style="margin-top:14px"><table id="tbS" style="min-width:480px"><thead><tr><th>Kelompok Sumber Harga</th><th class="num">Jumlah Pekerjaan</th><th class="num">Biaya Langsung</th><th class="num">Porsi</th></tr></thead><tbody></tbody></table></div>
+
+    <h2>Rekapitulasi Kebutuhan Bahan & Upah (Pekerjaan Ber-AHSP)</h2>
+    <div class="box"><table id="tbM" style="min-width:420px"><thead><tr><th>Bahan / Tenaga Upah</th><th class="num">Volume Kebutuhan</th><th>Satuan</th><th class="num">Estimasi Biaya</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted" id="srcNote"></p>
+
+    <!-- Jadwal Pelaksanaan Gantt Chart -->
+    <h2>Jadwal Pelaksanaan Pekerjaan (Barchart / Gantt Chart)</h2>
+    <p class="muted">Tabel balok jadwal mingguan dan sebaran bobot (% terhadap biaya langsung). Baris bawah menampilkan akumulasi progres mingguan dan kumulatif.</p>
+    <div class="box scroll" style="max-height:480px"><table class="gt-tb" id="tbGantt"></table></div>
+
+    <!-- Grafik Kurva S -->
+    <h2>Kurva S: Rencana vs Realisasi Proyek</h2>
+    <div class="chart" id="chart"></div>
+    <div class="leg">
+      <span><i style="background:var(--accent)"></i>Kumulatif Rencana (sumbu kiri, %)</span>
+      <span><i style="background:var(--real)"></i>Kumulatif Realisasi / Aktual (sumbu kiri, %)</span>
+      <span><i style="background:var(--bar)"></i>Progres Mingguan Rencana (sumbu kanan, %)</span>
+    </div>
+
+    <!-- Rincian Mingguan & Form Input Realisasi -->
+    <h2>Rincian Mingguan & Input Progres Realisasi</h2>
+    <p class="muted">Isi kolom <strong>Realisasi (%)</strong> per minggu untuk melihat kurva aktual dan deviasi secara otomatis. Gunakan tombol bantuan di bawah untuk pengujian cepat.</p>
+    <div class="bar act-actions">
+      <button class="btn alt" id="actPlanBtn">Isi Realisasi = Rencana</button>
+      <button class="btn alt" id="actLateBtn">Simulasi Terlambat (-3%)</button>
+      <button class="btn alt" id="actFastBtn">Simulasi Lebih Cepat (+2%)</button>
+      <button class="btn alt" id="actClearBtn">Kosongkan Realisasi</button>
+    </div>
+    <div class="box scroll"><table id="tbW" style="min-width:620px"><thead><tr><th class="num">Minggu</th><th class="num">Rencana (%)</th><th class="num">Kum. Rencana (%)</th><th style="min-width:110px">Realisasi (%)</th><th class="num">Kum. Realisasi (%)</th><th class="num">Deviasi</th><th class="num">Biaya Rencana</th></tr></thead><tbody></tbody></table></div>
+    <div class="bar"><button class="btn primary" id="csvBtn">Unduh Laporan CSV</button><button class="btn alt" id="cpBtn">Salin ke Clipboard</button></div>
+    <textarea id="csvOut" readonly hidden aria-label="Isi CSV" style="width:100%;min-height:100px"></textarea>
+
+    <!-- Lembar Pengesahan -->
+    <div id="printSig"></div>
+  </section>
+</div>
+
+<script>
+const KEY='rab-gedung-v5';
+const $=s=>document.querySelector(s);
+const fmt=n=>(Number(n)||0).toLocaleString('id-ID',{maximumFractionDigits:2});
+const rp=n=>'Rp '+Math.round(Number(n)||0).toLocaleString('id-ID');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const DIV=['Persiapan','Struktur','Arsitektur','MEP','Finishing'];
+const DL={
+  TANAH:'luas tanah (m²)',
+  PAGAR:'keliling pagar (m)',
+  LS:'lumpsum',
+  KEET:'luas direksi keet (m²)',
+  MAN:'volume manual (isi di kolom Koef.)',
+  GALIAN:'volume galian (m³)',
+  LT:'luas lantai total (m²)',
+  LANTAI:'jumlah lantai',
+  DINDING:'dinding bersih (m²)',
+  ATAP:'luas atap (m²)',
+  LISPLANK:'panjang lisplank (m\')',
+  NOK:'panjang bubungan / nok (m\')',
+  PINTU:'jumlah pintu',
+  JENDELA:'jumlah jendela',
+  LAMPU:'titik lampu',
+  KABEL:'panjang kabel (m)',
+  STOPK:'stop kontak & saklar',
+  PIPA:'panjang pipa (m)',
+  TOILET:'jumlah toilet'
+};
+
+// Template Item Uraian Pekerjaan: Gedung Bertingkat (1–10 Lantai)
+const ITEM_GEDUNG=[
+  ['p1',0,'Pembersihan dan pengupasan permukaan tanah','TANAH',1,'m²',15178],
+  ['p2',0,'Pagar sementara (seng gelombang, rangka kayu)','PAGAR',1,'m',649094],
+  ['p3',0,'Direksi keet / kantor sementara','KEET',1,'m²',4130574],
+  ['p4',0,'Galian tanah pondasi gedung','GALIAN',1,'m³',85000],
+  ['s1',1,'Pondasi beton bertulang gedung','LT',.04,'m³',6500000],
+  ['s2',1,'Beton bertulang struktur atas gedung (kolom, balok, pelat, tangga)','LT',.28,'m³',7200000],
+  ['a1',2,'Pasangan dinding bata ringan / bata merah 1:4','DINDING',1,'m²',185000],
+  ['a2',2,'Plesteran & acian dua sisi','DINDING',2,'m²',95000],
+  ['a3',2,'Pintu komersial (kusen, daun pintu, aksesori)','PINTU',1,'unit',2800000],
+  ['a4',2,'Jendela aluminium & kaca gedung','JENDELA',1,'unit',2400000],
+  ['a5',2,'Rangka & penutup atap dak beton / membran waterproofing','ATAP',1,'m²',380000],
+  ['a6',2,'Plafon acoustic / gypsum board gedung','LT',.9,'m²',160000],
+  ['a7',2,'Lantai granit tile komersial 60x60','LT',.85,'m²',320000],
+  ['m1',3,'Titik lampu LED panel kantor & armatur','LAMPU',1,'titik',350000],
+  ['m2',3,'Instalasi kabel penerangan & daya gedung','KABEL',1,'m',45000],
+  ['m3',3,'Stop kontak & saklar standar komersial','STOPK',1,'titik',280000],
+  ['m4',3,'Panel listrik utama & sub-panel per lantai','LANTAI',1,'unit',12000000],
+  ['m5',3,'Pipa air bersih, air kotor & buangan','PIPA',1,'m',120000],
+  ['m6',3,'Sanitair toilet komersial (closet, wastafel, urinal)','TOILET',1,'set',4500000],
+  ['m7',3,'Tata udara (HVAC / AC split duct/cassette)','LT',1,'m²',450000],
+  ['f1',4,'Pengecatan dinding interior & eksterior gedung','DINDING',2,'m²',45000],
+  ['f2',4,'Waterproofing toilet & atap dak beton','TOILET',6,'m²',120000],
+  ['f3',4,'Pembersihan akhir & serah terima proyek','LT',1,'m²',15000]
+];
+
+// Template Item Uraian Pekerjaan: Rumah Tinggal (1–3 Lantai)
+const ITEM_RUMAH=[
+  ['p1',0,'Pembersihan lahan & tebas tebang semak','TANAH',1,'m²',15178],
+  ['p2',0,'Pengukuran & pemasangan Bouwplank keliling','PAGAR',0.6,'m',97075],
+  ['p3',0,'Bedeng kerja & gudang material sementara','KEET',1,'m²',1200000],
+  ['p4',0,'Galian tanah pondasi batu belah & footplate','GALIAN',1,'m³',113970],
+  ['s1',1,'Pondasi batu belah & footplate beton bertulang','LT',.06,'m³',3800000],
+  ['s2',1,'Beton bertulang struktur rumah (sloof, kolom praktis, ringbalk, plat)','LT',.20,'m³',5800000],
+  ['a1',2,'Pasangan dinding bata merah adukan 1:4','DINDING',1,'m²',185000],
+  ['a2',2,'Plesteran & acian dinding dua sisi tebal 15mm','DINDING',2,'m²',95000],
+  ['a3',2,'Kusen & daun pintu kayu / aluminium (utama + kamar)','PINTU',1,'unit',1950000],
+  ['a4',2,'Kusen & daun jendela kaca rumah tinggal','JENDELA',1,'unit',1450000],
+  ['a5',2,'Rangka atap baja ringan (Truss canal C75 & reng)','ATAP',1,'m²',220000],
+  ['a5b',2,'Penutup atap genteng (keramik berglazur / beton flat)','ATAP',1,'m²',185000],
+  ['a5c',2,'Pekerjaan bubungan / wuwungan nok genteng','NOK',1,'m',125000],
+  ['a5d',2,'Pemasangan lisplank GRC / woodplank keliling atap','LISPLANK',1,'m',95000],
+  ['a6',2,'Plafon gypsum board / PVC rangka hollow galvanis','LT',.9,'m²',135000],
+  ['a7',2,'Lantai granit / keramik rumah 60x60','LT',.85,'m²',260000],
+  ['m1',3,'Titik lampu downlight LED & fitting','LAMPU',1,'titik',225000],
+  ['m2',3,'Instalasi kabel listrik rumah (NYM 3x2.5 mm)','KABEL',1,'m',35000],
+  ['m3',3,'Stop kontak, saklar & outlet TV/AC rumah','STOPK',1,'titik',180000],
+  ['m4',3,'Box MCB sekring & pembagian grup listrik','LANTAI',1,'unit',2500000],
+  ['m5',3,'Instalasi pipa air bersih & air kotor PVC','PIPA',1,'m',85000],
+  ['m6',3,'Sanitair kamar mandi (closet duduk/jongkok, shower, wastafel)','TOILET',1,'set',2800000],
+  ['m7',3,'Toren air 1000L, pompa air pendorong & septic tank biofil','TOILET',1,'set',4800000],
+  ['f1',4,'Pengecatan dinding interior & eksterior weatherproof','DINDING',2,'m²',38000],
+  ['f2',4,'Waterproofing kamar mandi lantai atas & area basah','TOILET',4,'m²',110000],
+  ['f3',4,'Pembersihan akhir rumah & serah terima kunci','LT',1,'m²',12000]
+];
+
+let ITEM = ITEM_GEDUNG;
+
+const HB0={
+  pekerja:['Pekerja','OH',100000],
+  tukang:['Tukang (kayu/batu/besi)','OH',130000],
+  kepala:['Kepala tukang','OH',140000],
+  mandor:['Mandor','OH',150000],
+  semen:['Semen portland (50kg)','kg',1500],
+  pasir:['Pasir beton / pasang','m³',250000],
+  kerikil:['Kerikil / split 2/3','m³',350000],
+  bata:['Bata merah standar','bh',1000],
+  besi:['Besi beton tulangan','kg',15000],
+  bekisting:['Bekisting struktur atas (multiplek + perancah)','m²',280000],
+  bekisting_pondasi:['Bekisting pondasi & sloof (kayu bekisting)','m²',220000],
+  baja_ringan:['Rangka atap baja ringan galvalume C75','m²',140000],
+  genteng_keramik:['Genteng keramik berglazur','m²',110000],
+  genteng_beton:['Genteng beton flat monier','m²',85000],
+  genteng_metal:['Genteng metal berpasir','m²',65000],
+  nok_genteng:['Bubungan / nok genteng keramik','m\'',75000],
+  lisplank:['Lisplank GRC / woodplank 9mm','m\'',55000]
+};
+
+const AH0={
+  galian:['Galian tanah','m³',{pekerja:.75,mandor:.025}],
+  pondasi:['Pondasi beton bertulang','m³',{semen:371,pasir:.52,kerikil:.78,besi:100,bekisting_pondasi:3,pekerja:1.65,tukang:.275,kepala:.028,mandor:.083}],
+  beton:['Beton bertulang struktur atas','m³',{semen:371,pasir:.52,kerikil:.78,besi:180,bekisting:6,pekerja:1.65,tukang:.275,kepala:.028,mandor:.083}],
+  dinding:['Pasangan dinding bata 1:4','m²',{bata:70,semen:11.5,pasir:.043,pekerja:.3,tukang:.1,kepala:.01,mandor:.015}],
+  plester:['Plesteran 1:4 tebal 15 mm','m²',{semen:6.24,pasir:.024,pekerja:.3,tukang:.15,kepala:.015,mandor:.015}],
+  atap_baja:['Rangka atap baja ringan C75','m²',{baja_ringan:1,pekerja:.2,tukang:.1,kepala:.01,mandor:.01}],
+  atap_genteng:['Penutup atap genteng keramik','m²',{genteng_keramik:1,pekerja:.15,tukang:.075,kepala:.008,mandor:.008}],
+  nok:['Pekerjaan nok / bubungan genteng','m\'',{nok_genteng:1,semen:8,pasir:.015,pekerja:.1,tukang:.05,mandor:.005}],
+  lisplank_ah:['Pemasangan lisplank GRC','m\'',{lisplank:1,pekerja:.08,tukang:.04,mandor:.004}]
+};
+const HSP={"U.1.1.1 (c)":["Pembuatan 1 m' Pagar Sementara dari Kayu Tinggi 2 Meter","m'",{"kab":1048858,"kota":1138388}],"U.1.1.2 (c)":["Pembuatan 1 m' pagar sementara dari seng gelombang rangka kayu tinggi 2 meter","m'",{"kab":649094,"kota":729038}],"U.1.1.3 (c)":["Pembuatan 1 m' pagar sementara dari kawat duri tinggi 2 meter","m'",{"kab":481881,"kota":508757}],"U.1.1.4 (a)":["Pembuatan 1 m' pagar sementara seng gelombang Rangka baja L.40.40.4, Tinggi pagar 1,8 m'","m'",{"kab":565370,"kota":572300}],"U.1.1.5 (a)":["Pembuatan 1 m' pagar sementara seng gelombang Rangka kayu, tinggi pagar 1,8 m'","m'",{"kab":599403,"kota":670288}],"U.1.1.6 (c)":["Pembuatan 1 m2 Pagar BRC Galvanis","m2",{"kab":26146,"kota":26146}],"U.1.1.7 (c)":["Pemasangan 1 m2 panel beton pracetak 5x50x240 cm untuk pagar","m2",{"kab":491615,"kota":493595}],"U.1.2.1.a (a)":["1 m2 stake out trase saluran/infrastruktur (baru) di lapangan","m2",{"kab":3943,"kota":3943}],"U.1.2.1.d (a)":["Pasangan 1 m' Bouwplank","m'",{"kab":97075,"kota":97075}],"U.1.3.c (c)":["Pembuatan 1 m2 Kantor Sementara/Rumah Jaga/Gudang Semen dan Peralatan Lantai Plesteran, Dinding Setengah Tembok","m2",{"kab":4130574,"kota":4559907}],"U.1.3.f.1 (a)":["1 Buah papan nama pekerjaan menggunakan multiflex 18 mm, frame besi siku dan tiang kayu 8/12","Buah",{"kab":2391046,"kota":2404521}],"U.1.3.f.2 (a)":["1 Buah papan nama pekerjaan ukuran 0,6x0,8 menggunakan multiplex 10 mm, frame aluminium siku & tiang kayu 5/7, printing banner plastik","Buah",{"kab":964442,"kota":950582}],"U.1.3.g.4 (b)":["Pembuatan 1 m2 Jalan Lapis Macadam","m2",{"kab":3223887,"kota":3223887}],"U.3.1.a (c)":["1 m2 Pembersihan dan Pengupasan Permukaan Tanah (Striping) s.d. Tanaman diameter 2cm 2 cm (Untuk Bidang Bina Marga : Pengupasan tanah humus 20-30 cm termasuk tanaman 0 <15 cm)","m2",{"kab":15178,"kota":15178}],"U.3.1.b (a)":["Tebas tebang 1 m2 tanaman/tumbuhan diameter < 5 cm","m2",{"kab":4949,"kota":4949}],"U.3.1.c (a)":["Tebas tebang 1 m2 tanaman/tumbuhan diameter >5 s.d. 15 cm","m2",{"kab":8248,"kota":8248}],"U.3.1.d (a)":["Tebas tebang 1 batang pohon/tumbuhan diameter >15 s.d. 30 cm (Untuk Bidang Bina Marga : termasuk pembongkaran tunggul/akar pohon dan diameter pohon diukur 1 m di atas permukaan tanah)","batang",{"kab":13197,"kota":13197}],"U.3.1.e (a)":["Tebas tebang 1 batang pohon/tumbuhan diameter >30 s.d. 50 cm","batang",{"kab":1980,"kota":1980}],"U.3.1.g (a)":["Tebas tebang 1 batang pohon/tumbuhan diameter >50 s.d. 75 cm (diameter pohon diukur 1 m di atas permukaan tanah)","batang",{"kab":59725,"kota":59725}],"U.3.1.h (a)":["Tebas tebang 1 batang pohon/tumbuhan diameter > 75 cm (diameter pohon diukur 1 m di atas permukaan tanah)","batang",{"kab":76882,"kota":76882}],"U.3.2.a (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 5 s.d. 15 cm dan membuang sisa tunggul kayu dan tanpa menutup kembali bekas lubang","Buah",{"kab":59217,"kota":59217}],"U.3.2.b (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 15 s.d.30 cm dan membuang sisa tunggul kayu dan tanpa menutup kembali bekas lubang","Buah",{"kab":83085,"kota":83085}],"U.3.2.c (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 30 s.d.50 cm dan membuang sisa tunggul kayu dan tanpa menutup kembali bekas lubang","Buah",{"kab":117214,"kota":117214}],"U.3.2.d (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 50 s.d.70 cm dan membuang sisa tunggul kayu dan tanpa menutup kembali bekas lubang","Buah",{"kab":181698,"kota":181698}],"U.3.2.e (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 70 cm dan membuang sisa tunggul kayu dan tanpa menutup kembali bekas lubang","Buah",{"kab":264130,"kota":264130}],"U.3.3.a (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 5 s.d. 15 cm dan membuang sisa tunggul kayu dan menutup kembali bekas lubang","Buah",{"kab":60509,"kota":60509}],"U.3.3.b (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 15 s.d. 30 cm dan membuang sisa tunggul kayu dan menutup kembali bekas lubang","Buah",{"kab":96613,"kota":96613}],"U.3.3.c (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 30 s.d. 50 cm dan membuang sisa tunggul kayu dan menutup kembali bekas lubang","Buah",{"kab":137972,"kota":137972}],"U.3.3.d (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 50 s.d. 75 cm dan membuang sisa tunggul kayu dan menutup kembali bekas lubang","Buah",{"kab":216342,"kota":216342}],"U.3.3.e (a)":["Gali dan cabut 1 tunggul pohon tanaman keras diamater > 75 cm dan membuang sisa tunggul kayu dan menutup kembali bekas lubang","Buah",{"kab":331230,"kota":331230}],"U.3.4.1.a.1 (c)":["Penggalian 1 m3 tanah biasa sedalam s.d. 1 m untuk volume s.d. 200 m3 cara manual","m3",{"kab":113970,"kota":113970}],"U.3.4.1.a.2 (a)":["Penggalian 1 m3 tanah biasa sedalam s.d. 1 m untuk volume 200 m3 s.d. 2000 m3 cara manual","m3",{"kab":92877,"kota":92877}],"U.3.4.1.a.3 (a)":["Penggalian 1 m3 tanah biasa sedalam s.d. 1 m untuk volume > 2000 m3 cara manual","m3",{"kab":65987,"kota":65987}],"U.3.4.1.a.4 (a)":["Penggalian 1 m3 tanah biasa sedalam > 1 m s.d. 2 m untuk volume s.d. 200 m3 cara manual","m3",{"kab":136606,"kota":136606}],"U.3.4.1.a.5 (c)":["Penggalian 1 m3 tanah biasa sedalam > 1 m s.d. 2 m untuk volume > 200 m3 cara manual","m3",{"kab":111354,"kota":111354}],"U.3.4.1.a.6 (c)":["Penggalian 1 m3 tanah biasa sedalam > 2 m s.d. 3 m untuk volume s.d. 200 m3 cara manual","m3",{"kab":163197,"kota":163197}],"U.3.4.1.a.7 (a)":["Penggalian 1 m3 tanah biasa sedalam > 2 m s.d. 3 m untuk volume > 200 m3 cara manual","m3",{"kab":125376,"kota":125376}],"U.3.4.1.a.8 (a)":["Penggalian 1 m3 tanah biasa sedalam > 3 m, setiap tambah kedalaman 1 m cara manual","m3",{"kab":12373,"kota":12373}],"U.3.4.1.b.1":["Penggalian 1 m3 tanah biasa sedalam > 0 s.d. 1 m dengan cara semi mekanis","m3",{"kab":53208,"kota":53208}],"U.3.4.1.b.2":["Penggalian 1 m3 tanah biasa sedalam > 1 s.d. 2 m dengan cara semi mekanis","m3",{"kab":63327,"kota":63327}],"U.3.4.1.b.3":["Penggalian 1 m3 tanah biasa sedalam > 2 s.d. 3 m dengan cara semi mekanis","m3",{"kab":75617,"kota":75617}],"U.3.4.1.b.4":["Penggalian 1 m3 tanah biasa sedalam > 3 m setiap penambahan kedalaman 1 m dengan cara semi mekanis","m3",{"kab":14435,"kota":14435}],"U.3.4.2.a.1 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 0 s.d. 1 m dengan cara manual","m3",{"kab":222872,"kota":222872}],"U.3.4.2.a.2 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 1 s.d. 2 m dengan cara manual","m3",{"kab":247452,"kota":247452}],"U.3.4.2.a.3 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 2 s.d. 3 m dengan cara manual","m3",{"kab":272198,"kota":272198}],"U.3.4.2.a.4 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 3 m, setiap tambah dalam 1 m dengan cara manual","m3",{"kab":23096,"kota":23096}],"U.3.4.2.b.1 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 0 s.d. 1 m dengan cara semi mekanis","m3",{"kab":108088,"kota":108088}],"U.3.4.2.b.2 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 1 s.d. 2 m dengan cara semi mekanis","m3",{"kab":125992,"kota":125992}],"U.3.4.2.b.3 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 2 s.d. 3 m dengan cara semi mekanis","m3",{"kab":147824,"kota":147824}],"U.3.4.2.b.4 (a)":["Penggalian 1 m3 tanah berbatu sedalam > 3 m, setiap tambah dalam 1 m dengan cara semi mekanis","m3",{"kab":26946,"kota":26946}],"U.3.4.3.a.1 (c)":["Penggalian 1 m3 cadas atau tanah keras sedalam sampai dengan 1 m untuk volume s.d 200 m3 cara manual","m3",{"kab":227676,"kota":227676}],"U.3.4.3.a.2 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 0 s.d 1 m sampai dengan 1 m untuk volume >200 m3 cara manual","m3",{"kab":206210,"kota":206210}],"U.3.4.3.a.3 (c)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 1 s.d 2 m sampai dengan 1 m untuk volume s.d 200 m3 cara manual","m3",{"kab":223721,"kota":223721}],"U.3.4.3.a.4 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 1 s.d 2 m untuk volume > 200 m3 cara manual","m3",{"kab":229636,"kota":229636}],"U.3.4.3.a.5 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 2 s.d 3 m untuk volume s.d 200 m3 cara manual","m3",{"kab":247452,"kota":247452}],"U.3.4.3.a.6 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 3 m tiap tambah dalam 1 m cara manual","m3",{"kab":16497,"kota":16497}],"U.3.4.3.b.1 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 0 s.d 1 m cara semi mekanis","m3",{"kab":85930,"kota":85930}],"U.3.4.3.b.2 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 1 s.d 2 m cara semi mekanis","m3",{"kab":100610,"kota":100610}],"U.3.4.3.b.3 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 2 s.d 3 m cara semi mekanis","m3",{"kab":118568,"kota":118568}],"U.3.4.3.b.4 (a)":["Penggalian 1 m3 cadas atau tanah keras sedalam > 3 m, tiap tambah dalam 1 m cara semi mekanis","m3",{"kab":19577,"kota":19577}],"U.3.4.4.a.1 (a)":["Penggalian 1 m3 galian lumpur sedalam > 0 s.d 1 m untuk volume s.d 200 m3 cara manual","m3",{"kab":182141,"kota":182141}],"U.3.4.4.a.2 (a)":["Penggalian 1 m3 galian lumpur sedalam > 0 s.d 1 m untuk volume > 200 m3 cara manual","m3",{"kab":136924,"kota":136924}],"U.3.4.4.a.3 (a)":["Penggalian 1 m3 galian lumpur sedalam > 1 s.d 2 m untuk volume s.d 200 m3 cara manual","m3",{"kab":218569,"kota":218569}],"U.3.4.4.a.4 (a)":["Penggalian 1 m3 galian lumpur sedalam > 1 s.d 2 m untuk volume > 200 m3 cara manual","m3",{"kab":164968,"kota":164968}],"U.3.4.4.a.5 (a)":["Penggalian 1 m3 galian lumpur sedalam > 2 s.d 3 m cara manual","m3",{"kab":189713,"kota":189713}],"U.3.4.4.a.6 (a)":["Penggalian 1 m3 galian lumpur sedalam > 3 m, setiap tambah dalam 1 m cara manual","m3",{"kab":24745,"kota":24745}],"U.3.4.4.b.1 (a)":["Penggalian 1 m3 galian lumpur sedalam > 0 s.d 3 m cara semi mekanis","m3",{"kab":53342,"kota":53342}],"U.3.4.4.b.2 (a)":["Penggalian 1 m3 galian lumpur sedalam > 1 s.d 2 m cara semi mekanis","m3",{"kab":99541,"kota":99541}],"U.3.4.4.b.3 (a)":["Penggalian 1 m3 galian lumpur sedalam > 2 s.d 3 m cara semi mekanis","m3",{"kab":73416,"kota":73416}],"U.3.4.4.b.4 (a)":["Penggalian 1 m3 galian lumpur sedalam > 3 m cara semi mekanis","m3",{"kab":8799,"kota":8799}],"U.3.4.5.a.1 (a)":["Penggalian 1 m3 pasir sedalam > 0 s.d. 1 m cara manual","m3",{"kab":108879,"kota":108879}],"U.3.4.5.a.2 (a)":["Penggalian 1 m3 pasir sedalam > 1 s.d. 2 m cara manual","m3",{"kab":131975,"kota":131975}],"U.3.4.5.a.3 (a)":["Penggalian 1 m3 galian pasir sedalam > 2 s.d. 3 m cara manual","m3",{"kab":151771,"kota":151771}],"U.3.4.5.a.4 (a)":["Penggalian 1 m3 galian pasir sedalam > 3 m, tiap tambah dalam 1 m cara manual","m3",{"kab":16497,"kota":16497}],"U.3.4.5.b.1 (a)":["Penggalian 1 m3 pasir sedalam > 0 s.d 1 m cara semi mekanis","m3",{"kab":63242,"kota":63242}],"U.3.4.5.b.2 (a)":["Penggalian 1 m3 pasir sedalam > 1 s.d 2 m cara semi mekanis","m3",{"kab":73967,"kota":73967}],"U.3.4.5.b.3 (a)":["Penggalian 1 m3 pasir sedalam > 2 s.d 3 m cara semi mekanis","m3",{"kab":85791,"kota":85791}],"U.3.4.5.b.4 (a)":["Penggalian 1 m3 pasir sedalam > 3 m, untuk setiap tambah dalam 1 m cara semi mekanis","m3",{"kab":14575,"kota":14575}],"U.3.4.6.1 (a)":["1 m2 Pasangan 3-lapis gribig bambu, JAT < 0,8 m'","m2",{"kab":469815,"kota":469815}],"U.3.4.6.2 (a)":["1 m2 Pasangan 2-lapis bilik kulit (hinis/kulit bambu), JAT < 0,8 m'","m2",{"kab":318609,"kota":318609}],"U.3.4.6.3 (a)":["1 m2 Pasangan 1-lapis gedeg bambu, JAT< 0,8 m'","m3",{"kab":148907,"kota":151327}],"U.3.4.6.4 (a)":["1 m2 Pasangan 1-lapis gedeg bambu, JAT< 1,2 m'","m2",{"kab":38486,"kota":38629}],"U.3.4.6.5 (a)":["1 m2 Pasangan Papan 3/20, JAT < 1,5 m'","m2",{"kab":156071,"kota":159519}],"U.3.4.6.6 (a)":["1 m2 Pasangan balok kayu 8/12, tebal 12 cm, JAT < 4,0 m'","m2",{"kab":449383,"kota":512541}],"U.3.4.6.7 (a)":["1 m2 Pasangan balok kayu 8/12, tebal 8 cm, JAT < 5,5 m","m2",{"kab":640278,"kota":703445}],"U.3.5.1.a (c)":["1 m3 Urukan Kembali Galian Tanah (> 0 s.d. 200 m3), tanpa pemadatan secara Manual","m3",{"kab":75892,"kota":75892}],"U.3.5.1.b (c)":["1 m3 Timbunan dengan Pasir Uruk ( > 0 s.d. 200 m3), tanpa pemadatan secara Manual","m3",{"kab":547135,"kota":540535}],"U.3.5.1.c (a)":["1 m3 Urukan denga pasir uruk untuk volume > 200 m3 tanpa pemadatan secara Manual","m3",{"kab":512323,"kota":505723}],"U.3.5.1.d (a)":["1 m3 Urukan tanah biasa atau tanah liat berpasir, tanpa pemadatan secara Manual","m3",{"kab":516997,"kota":516997}],"U.3.5.1.e (a)":["1 m3 Urukan tanah liat (lempung), tanpa pemadatan secara Manual","m3",{"kab":599771,"kota":599771}],"U.3.5.2.a (c)":["1 m3 Pemadatan Tanah per 20 cm menggunakan alat timbris secara Manual","m3",{"kab":75892,"kota":75892}],"U.3.5.2.b (c)":["1 m3 Timbunan dan Pemadatan Sirtu","m3",{"kab":438792,"kota":438792}],"U.3.6.a.1 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut s.d 10 m","m3",{"kab":31930,"kota":31930}],"U.3.6.a.2 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >10 s.d 20 m","m3",{"kab":34194,"kota":34194}],"U.3.6.a.3 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >20 s.d 30 m","m3",{"kab":35863,"kota":35863}],"U.3.6.a.4 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >30 s.d 40 m","m3",{"kab":38015,"kota":38015}],"U.3.6.a.5 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >40 s.d 50 m","m3",{"kab":41313,"kota":41313}],"U.3.6.a.6 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >50 s.d 100 m","m3",{"kab":52214,"kota":52214}],"U.3.6.a.7 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >100 s.d 200 m","m3",{"kab":73505,"kota":73505}],"U.3.6.a.8 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >200 s.d 300 m","m3",{"kab":98840,"kota":98840}],"U.3.6.a.9 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >300 s.d 400 m","m3",{"kab":128617,"kota":128617}],"U.3.6.a.10 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >400 s.d 500 m","m3",{"kab":165998,"kota":165998}],"U.3.6.a.11 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut >500 s.d 600 m","m3",{"kab":209091,"kota":209091}],"U.3.6.a.12 (a)":["Mengangkut 1 m3 tanah lepas, jarak angkut > 600 m, untuk setiap penambahan jarak angkut 100 m","m3",{"kab":41727,"kota":41727}],"U.3.6.b.1 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 0 s.d. 1m","m3",{"kab":6071,"kota":6071}],"U.3.6.b.2 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 1 s.d 2 m","m3",{"kab":8803,"kota":8803}],"U.3.6.b.3 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 2 s.d 3 m","m3",{"kab":11674,"kota":11674}],"U.3.6.b.4 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 3 s.d 4 m","m3",{"kab":14875,"kota":14875}],"U.3.6.b.5 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 4 s.d 5 m","m3",{"kab":18214,"kota":18214}],"U.3.6.b.6 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 5 s.d 6 m","m3",{"kab":21553,"kota":21553}],"U.3.6.b.7 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 6 s.d 7 m","m3",{"kab":25196,"kota":25196}],"U.3.6.b.8 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 7 s.d 8 m","m3",{"kab":28839,"kota":28839}],"U.3.6.b.9 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 8 s.d 9 m","m3",{"kab":32785,"kota":32785}],"U.3.6.b.10 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 9 s.d 10 m","m3",{"kab":36567,"kota":36567}],"U.3.6.b.11 (a)":["Menurunkan 1 m3 material, sampai beda tinggi > 10 m, untuk setiap tambahan 1 m","m3",{"kab":3643,"kota":3643}],"U.3.6.c.1 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 0 s.d. 1 m","m3",{"kab":30357,"kota":30357}],"U.3.6.c.2 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 1 s.d. 2 m","m3",{"kab":44321,"kota":44321}],"U.3.6.c.3 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 2 s.d. 3 m","m3",{"kab":58892,"kota":58892}],"U.3.6.c.4 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 3 s.d. 4 m","m3",{"kab":74678,"kota":74678}],"U.3.6.c.5 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 4 s.d. 5 m","m3",{"kab":90767,"kota":90767}],"U.3.6.c.6 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 5 s.d. 6 m","m3",{"kab":107767,"kota":107767}],"U.3.6.c.7 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 6 s.d. 7 m","m3",{"kab":125677,"kota":125677}],"U.3.6.c.8 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 7 s.d. 8 m","m3",{"kab":144195,"kota":144195}],"U.3.6.c.9 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 8 s.d. 9 m","m3",{"kab":163623,"kota":163623}],"U.3.6.c.10 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 9 s.d. 10 m","m3",{"kab":183355,"kota":183355}],"U.3.6.c.11 (a)":["Menaikkan 1 m3 material, sampai beda tinggi > 10 m, untuk setiap penambahan tinggi 1 m","m3",{"kab":18518,"kota":18518}],"U.3.7.a (a)":["1 m2 Penanaman Gebalan Rumput","m2",{"kab":76997,"kota":79417}],"U.3.7.b.1.a":["Pembabadan rumput 1 m2, secara semi Mekanis","m2",{"kab":1020,"kota":1020}],"U.3.7.b.1.b.1":["1 m2 Pembabadan rumput, Daerah datar s.d. pelandaian naik sudut kemiringan 1v:10h","m2",{"kab":812,"kota":812}],"U.3.7.b.1.b.2":["1 m2 Pembabadan rumput, Daerah dengan sudut kemiringan 1v:10h sampai dengan 1v:2,5h","m2",{"kab":1020,"kota":1020}],"U.3.7.b.1.b.3":["1 m2 Pembabadan rumput, Daerah dengan sudut kemiringan 1v:2,5h sampai dengan 1v:1h","m2",{"kab":1441,"kota":1441}],"U.3.7.b.1.b.4":["1 m2 Pembabadan rumput, Daerah dengan sudut kemiringan 1v:1h sampai dengan 2,5v:1h","m2",{"kab":2219,"kota":2219}],"U.3.7.b.1.b.5":["1 m2 Pembabadan rumput, Daerah dengan sudut kemiringan 2,5v:1h sampai dengan tegak","m2",{"kab":3960,"kota":3960}],"U.4.1.a (c)":["Membuat 1 m3 Beton Mutu fc' 10 MPa, slump (100+-25) mm, agregat maksimal 19 mm secara Manual","m3",{"kab":1565539,"kota":1577287}],"U.4.1.b (c)":["Membuat 1 m3 Beton Mutu fc' 15 MPa, slump (100+-25) mm, agregat maksimal 19 mm secara Manual","m3",{"kab":1616848,"kota":1630312}],"U.4.1.c (c)":["Membuat 1 m3 Beton Mutu fc' 17 MPa, slump (100+-25) mm, agregat maksimal 19 mm secara Manual","m3",{"kab":1638232,"kota":1652400}],"U.4.1.d (c)":["Membuat 1 m3 Beton Mutu fc' 20 MPa, slump (100+-25) mm, agregat maksimal 19 mm secara Manual","m3",{"kab":1672103,"kota":1687415}],"U.4.1.e (c)":["Membuat 1 m3 Beton Mutu fc' 21 MPa, slump (100+-25) mm, agregat maksimal 19 mm secara Manual","m3",{"kab":1698415,"kota":1714607}],"U.4.2.a.1.1 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu rendah fc' 10 MPa; W/C = 0,700 secara Semi-Mekanis","m3",{"kab":1528956,"kota":1541232}],"U.4.2.a.1.2 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu rendah fc' 15 MPa; W/C = 0,666 secara Semi-Mekanis","m3",{"kab":1547189,"kota":1560081}],"U.4.2.a.2.1 (c)":["Pembuatan s.d Pengecoran 1 m3 beton mutu rendah fc' 10 MPa; slump (100+-25) mm, agregat maksimal 19 mm secara Semi-Mekanis","m3",{"kab":1493940,"kota":1505688}],"U.4.2.a.2.2 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu rendah fc' 15 MPa; slump (100+-25) mm, agregat maksimal 19 mm secara Semi-Mekanis","m3",{"kab":1593923,"kota":1607387}],"U.4.2.a.2.3 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu rendah fc' 17 MPa; slump (100+-25) mm, agregat maksimal 19 mm secara Semi-Mekanis","m3",{"kab":1615307,"kota":1629475}],"U.4.2.b.1.1 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 20 MPa; W/C = 0,591 secara semi-mekanis","m3",{"kab":1597774,"kota":1612294}],"U.4.2.b.1.2 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 25 MPa; W/C = 0,509 secara semi-mekanis","m3",{"kab":1669991,"kota":1686843}],"U.4.2.b.1.3 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 30 MPa; W/C = 0,455 secara semi-mekanis","m3",{"kab":1732264,"kota":1751096}],"U.4.2.b.1.4 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 35 MPa; W/C = 0,412 secara semi-mekanis","m3",{"kab":1580215,"kota":1596891}],"U.4.2.b.2.1 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 20 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1649178,"kota":1664490}],"U.4.2.b.2.2 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 21 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1675490,"kota":1691682}],"U.4.2.b.2.3 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 25 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1726799,"kota":1744707}],"U.4.2.b.2.4 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 28 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1766267,"kota":1785495}],"U.4.2.b.2.5 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 30 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1792579,"kota":1812687}],"U.4.2.b.2.6 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 31 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1807385,"kota":1827977}],"U.4.2.b.2.7 (a)":["Pembuatan s.d Pengecoran 1 m3 beton mutu sedang fc' 35 MPa, slump (100 +- 25) mm, agregat maksimal19 mm secara Semi-Mekanis","m3",{"kab":1860990,"kota":1883386}],"U.4.3.a (a)":["1 m3 Pengecoran Beton menggunakan Ready Mixed","m3",{"kab":1142313,"kota":1142313}],"U.4.4.a.1 (a)":["1 m3 beton dicorkan pada tapak setiap tambah jarak 25 m', secara Manual","m3",{"kab":83102,"kota":83102}],"U.4.4.a.2 (a)":["1 m3 beton dicorkan pada tapak setiap kenaikan 4 m', secara Manual","m3",{"kab":177066,"kota":177066}],"U.4.4.a.3 (a)":["Pengecoran pakai pompa beton diameter 1,5\"; 5 KW; 8 bar; T = 5 m'","m3",{"kab":562096,"kota":562096}],"U.4.4.a.4 (a)":["Pengecoran pakai pompa beton diameter 2,5\"; 20 KW; 20 bar; T = 18 m'","m3",{"kab":481796,"kota":481796}],"U.4.4.a.5 (a)":["Pengecoran pakai pompa beton diameter 2,5\"; 75 KW; 120 bar; T = 50 m'/H=80 m'","m3",{"kab":401497,"kota":401497}],"U.4.4.a.6 (a)":["Pengecoran pakai pompa beton diameter 3\"; 140 KW; 180 bar; T = 75 m'/H=150 m'","m3",{"kab":334395,"kota":334395}],"U.4.5.a (a)":["Pemadatan beton pada saat pengecoran secara Manual (menggunakan penusuk besi beton) untuk 1 m3 beton","m3",{"kab":32994,"kota":32994}],"U.4.5.b (a)":["Pemadatan beton pada saat pengecoran dengan vibrator untuk 1 m3 beton","m3",{"kab":74797,"kota":74797}],"U.4.6.a.1 (a)":["1 kg Penulangan slab untuk BjTP atau BjTS diameter < 12 mm, cara Manual","Kg",{"kab":19592,"kota":19306}],"U.4.6.a.2 (a)":["1 kg Penulangan slab untuk BjTP atau BjTS diameter > 12 mm, cara semi mekanis","Kg",{"kab":17352,"kota":17066}],"U.4.6.a.3 (a)":["1 kg Penulangan kolom, balok, ring balk dan sloof untuk BjTP atau BjTS diameter < 12 mm secara Manual","Kg",{"kab":18250,"kota":17964}],"U.4.6.a.4 (a)":["1 kg Penulangan kolom, balok, ring balk, sloof, dan shearwall untuk BjTP atau BjTS diameter > 12 mm secara Mekanis","Kg",{"kab":31890,"kota":31604}],"U.4.6.b.1 (a)":["Penulangan wiremesh secara manual","Kg",{"kab":15716,"kota":15716}],"U.4.6.b.2 (a)":["Penulangan wiremesh secara semi mekanis","Kg",{"kab":14974,"kota":14974}],"U.4.6.c.1 (a)":["Mengangkut/menaikkan 1 kg tulangan secara Manual setiap kenaikan jarak 4 m' vertikal","Kg",{"kab":74,"kota":74}],"U.4.6.c.2 (a)":["Mengangkut/menaikkan 1 kg tulangan secara Manual setiap penambahan jarak 25 m' horizontal","Kg",{"kab":35,"kota":35}],"U.4.6.c.3 (a)":["Mengangkut/menaikkan 1 kg tulangan secara mekanis dengan Tower Crane","Kg",{"kab":1638,"kota":1638}],"U.4.7.a.1 (a)":["Menggenangi 1 m2 permukaan beton dengan air selama 4 hari","m2",{"kab":4693,"kota":4778}],"U.4.7.a.2 (a)":["Menyirami 1 m2 permukaan beton menggunakan media kain terpal dengan air selama 4 hari","m2",{"kab":16500,"kota":16500}],"U.4.7.a.3 (a)":["Menyirami 1 m2 permukaan beton menggunakan media karung goni dengan air selama 4 hari","m2",{"kab":45672,"kota":47916}],"U.4.8.a (c)":["Pemasangan 1 m' PVC Waterstop lebar 150 mm","m'",{"kab":98274,"kota":98274}],"U.4.8.b (c)":["Pemasangan 1 m' PVC Waterstop lebar 200 mm","m",{"kab":125444,"kota":125444}],"U.4.8.c (a)":["Pemasangan 1 m' PVC Waterstop Lebar 230 mm - 320 mm","m",{"kab":158146,"kota":158146}],"U.4.8.d (a)":["1 m' pasangan water stop rubber lebar 150 mm - 200 mm","m'",{"kab":127856,"kota":127856}],"U.4.10.1":["Bongkar 1 m3 beton mutu rendah fc' < 20 MPa secara Manual","m3",{"kab":328658,"kota":328658}],"U.4.10.2":["Bongkar 1 m3 beton mutu sedang fc' > 20 MPa secara Manual","m3",{"kab":697608,"kota":697608}],"U.4.10.3":["Bongkar 1 m3 beton mutu rendah fc' < 20 MPa dengan Jack hammer","m3",{"kab":67369,"kota":67369}],"U.4.10.4":["Bongkar 1 m3 beton mutu sedang fc' 20 MPa < fc' < 40 MPa dengan Jack hammer","m3",{"kab":95089,"kota":95089}],"U.4.11.a (c)":["1 m3 Pekerjaan Grouting secara Manual","m3",{"kab":14306622,"kota":14306622}],"U.4.11.b (c)":["1 kg Pekerjaan Grouting secara injeksi (menggunakan Pressure grout machine 30 KW, 60-75 bar (D)","Kg",{"kab":306956,"kota":306956}],"U.5.1.a (a)":["Per-m' Penetrasi Tiang Pancang Kayu atau Dolken diameter 6-8 cm","m'",{"kab":374207,"kota":374207}],"U.5.1.b (a)":["Per-m' Penetrasi Tiang Pancang Kayu Gelondongan diameter 18-20 cm","m'",{"kab":451577,"kota":451577}],"U.5.2.a (a)":["Per-m' Penetrasi Tiang Pancang beton 15 x 15 cm","m'",{"kab":596375,"kota":596375}]};
+const WIL={
+  kab:{n:'Kabupaten Magelang',ed:'Edisi I Tahun 2026',sb:'HSP Konstruksi Kab. Magelang (data.jatengprov.go.id)'},
+  kota:{n:'Kota Magelang',ed:'edisi/tahun tidak tercantum di file',sb:'file kota-magelang.csv (diunggah pengguna)'}
+};
+
+// Komponen harga HSP Kab. Magelang
+const KP0={
+  p1:[{c:'U.3.1.a (c)',k:1}],
+  p2:[{c:'U.1.1.2 (c)',k:1}],
+  p3:[{c:'U.1.3.c (c)',k:1}],
+  p4:[{c:'U.3.4.1.a.5 (c)',k:1}],
+  s1:[
+    {c:'U.4.2.b.2.3 (a)',k:1},
+    {c:'U.4.6.a.3 (a)',k:100},
+    {c:'',n:'Bekisting pondasi & sloof (kayu bekisting)',k:3,h:220000}
+  ],
+  s2:[
+    {c:'U.4.2.b.2.3 (a)',k:1},
+    {c:'U.4.6.a.3 (a)',k:180},
+    {c:'',n:'Bekisting struktur atas (multiplek 12mm + scaffolding)',k:6,h:280000}
+  ]
+};
+
+const AH_OF_GEDUNG={a1:'dinding',a2:'plester'};
+const AH_OF_RUMAH={a1:'dinding',a2:'plester',a5:'atap_baja',a5b:'atap_genteng',a5c:'nok',a5d:'lisplank_ah'};
+
+const PF=[
+  ['nama','Nama Proyek Pekerjaan',''],
+  ['tipe','Tipe Bangunan Konstruksi',''],
+  ['wil','Wilayah Acuan Harga (HSP)',''],
+  ['n','Jumlah Lantai Bangunan',''],
+  ['A','Luas per Lantai Bangunan','m²'],
+  ['T','Tinggi Tiap Lantai','m'],
+  ['K','Keliling Bangunan (0 = otomatis)','m'],
+  ['tanah','Luas Total Lahan / Kavling','m²'],
+  ['gl','Luas Area Penggalian Tanah','m²'],
+  ['gd','Kedalaman Galian Pondasi','m'],
+  ['keet','Luas Bedeng / Direksi Keet','m²'],
+  ['atap_tipe','Jenis Bahan Penutup Atap',''],
+  ['atap_kemiringan','Kemiringan Sudut Atap','°'],
+  ['overstek','Lebar Teritisan / Overstek','m'],
+  ['sekat','Faktor Partisi Dinding Dalam','×'],
+  ['pintu','Jumlah Kusen & Daun Pintu','unit'],
+  ['jendela','Jumlah Kusen & Daun Jendela','unit'],
+  ['lp','Luas Rata-rata per Pintu','m²'],
+  ['lj','Luas Rata-rata per Jendela','m²'],
+  ['lampu','Jumlah Titik Lampu Penerangan','titik'],
+  ['kabel','Estimasi Panjang Kabel Listrik','m'],
+  ['stopk','Jumlah Stop Kontak & Saklar','titik'],
+  ['toilet','Jumlah Toilet / Kamar Mandi','set'],
+  ['pipa','Panjang Jalur Pipa Sanitasi','m']
+];
+
+/* Templat Instansi Lengkap (Bisa Diedit Langsung) */
+const INSTANSI_PRESETS = {
+  kampus: {
+    instansi: 'UNIVERSITAS TIDAR — FAKULTAS TEKNIK',
+    sub: 'Program Studi S1 Teknik Sipil — Tugas Besar Aplikasi Komputer',
+    judul: 'RENCANA ANGGARAN BIAYA (RAB) & JADWAL PELAKSANAAN (KURVA S) — ESTICON',
+    noDoc: '01/ESTICON-RAB-KS/UNTIDAR/2026',
+    lokasi: 'Kabupaten Magelang, Jawa Tengah',
+    p1_jab: 'Diajukan oleh:',
+    p1_peran: 'Estimator / Mahasiswa S1 Teknik Sipil',
+    p1_nm: 'Hafifi Mustofa',
+    p1_id: 'NIM. 2420503039',
+    p2_jab: 'Diperiksa oleh:',
+    p2_peran: 'Konsultan Pengawas / Asisten Dosen',
+    p2_nm: '...................................................',
+    p2_id: 'NIP. ....................................',
+    p3_jab: 'Disetujui oleh:',
+    p3_peran: 'Dosen Pengampu / Pejabat Pembuat Komitmen',
+    p3_nm: '...................................................',
+    p3_id: 'NIP. ....................................',
+    logoType: 'kampus'
+  },
+  pupr: {
+    instansi: 'PEMERINTAH KABUPATEN MAGELANG — DINAS PEKERJAAN UMUM DAN PENATAAN RUANG',
+    sub: 'Bidang Cipta Karya & Tata Bangunan · Jl. Soekarno Hatta No. 42 Magelang',
+    judul: 'RENCANA ANGGARAN BIAYA (RAB) & TIME SCHEDULE (KURVA S) — ESTICON',
+    noDoc: '600.1/RAB-CK/DPUPR/2026',
+    lokasi: 'Kabupaten Magelang, Jawa Tengah',
+    p1_jab: 'Dibuat oleh:',
+    p1_peran: 'Pejabat Pelaksana Teknis Kegiatan (PPTK)',
+    p1_nm: 'Ir. Bambang Triyono, ST, MT',
+    p1_id: 'NIP. 19780412 200501 1 008',
+    p2_jab: 'Diperiksa oleh:',
+    p2_peran: 'Kepala Bidang Cipta Karya',
+    p2_nm: 'H. Supriyanto, ST, MM',
+    p2_id: 'NIP. 19720815 199803 1 004',
+    p3_jab: 'Disetujui oleh:',
+    p3_peran: 'Pejabat Pembuat Komitmen (PPK)',
+    p3_nm: 'Drs. Hendro Wibowo, M.Si',
+    p3_id: 'NIP. 19681120 199402 1 001',
+    logoType: 'pupr'
+  },
+  kontraktor: {
+    instansi: 'PT. KARYA CIPTA KONSTRUKSI NUSANTARA',
+    sub: 'General Contractor & Civil Engineering · Graha Konstruksi Lt. 3, Magelang',
+    judul: 'RENCANA ANGGARAN BIAYA PELAKSANAAN (RAP) & JADWAL KERJA KURVA S',
+    noDoc: 'KCN/TS-RAB/II/2026',
+    lokasi: 'Kabupaten Magelang, Jawa Tengah',
+    p1_jab: 'Diajukan oleh:',
+    p1_peran: 'Site Engineer / Cost Estimator',
+    p1_nm: 'Andika Pratama, ST',
+    p1_id: 'SKA Ahli Teknik Bangunan Gedung',
+    p2_jab: 'Diperiksa oleh:',
+    p2_peran: 'Project Manager',
+    p2_nm: 'Ir. Agus Setiawan, MT',
+    p2_id: 'SKA Ahli Manajemen Proyek',
+    p3_jab: 'Disetujui oleh:',
+    p3_peran: 'Direktur Utama',
+    p3_nm: 'H. Gunawan Sudrajat, SE',
+    p3_id: 'Direktur Utama PT KCN',
+    logoType: 'kontraktor'
+  },
+  konsultan: {
+    instansi: 'CV. MITRA TEKNIK KONSULTAN',
+    sub: 'Engineering & Project Management Consultant · Jl. Pahlawan No. 18 Magelang',
+    judul: 'VERIFIKASI ANGGARAN BIAYA & KURVA S PENGAWASAN PROYEK',
+    noDoc: 'MTK/EVAL-RAB/2026/04',
+    lokasi: 'Kabupaten Magelang, Jawa Tengah',
+    p1_jab: 'Diverifikasi oleh:',
+    p1_peran: 'Quantity Surveyor (QS)',
+    p1_nm: 'Rina Wijayanti, ST',
+    p1_id: 'SKA Quantity Surveying Madya',
+    p2_jab: 'Disetujui oleh:',
+    p2_peran: 'Team Leader / Supervision Engineer',
+    p2_nm: 'Ir. Dwi Purnomo, MT',
+    p2_id: 'SKA Ahli Pengawas Konstruksi',
+    p3_jab: 'Diketahui oleh:',
+    p3_peran: 'Direktur Konsultan',
+    p3_nm: 'Ir. Budi Santoso',
+    p3_id: 'Pimpinan Perusahaan',
+    logoType: 'konsultan'
+  }
+};
+
+function getInstansiLogo(type, customUrl){
+  if(customUrl){
+    return `<img src="${customUrl}" alt="Logo Instansi" style="max-height:60px;max-width:65px;object-fit:contain">`;
+  }
+  if(type === 'pupr'){
+    return `<svg width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="27" fill="#1e3a8a" stroke="#ca8a04" stroke-width="2.5"/>
+      <circle cx="30" cy="30" r="21" fill="#facc15" stroke="#1e3a8a" stroke-width="1.5"/>
+      <path d="M 30 14 L 33 22 L 42 22 L 35 27 L 38 35 L 30 30 L 22 35 L 25 27 L 18 22 L 27 22 Z" fill="#1e3a8a"/>
+      <path d="M 22 38 C 26 44 34 44 38 38" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="30" y="52" text-anchor="middle" fill="#ffffff" font-size="6" font-weight="bold">PUPR</text>
+    </svg>`;
+  }
+  if(type === 'kontraktor'){
+    return `<svg width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="52" height="52" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+      <path d="M 16 46 L 16 16 L 44 16 L 44 46" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="16" y1="26" x2="44" y2="26" stroke="#f59e0b" stroke-width="1.5"/>
+      <line x1="16" y1="36" x2="44" y2="36" stroke="#f59e0b" stroke-width="1.5"/>
+      <polygon points="30,8 36,16 24,16" fill="#ef4444"/>
+    </svg>`;
+  }
+  if(type === 'konsultan'){
+    return `<svg width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="27" fill="#0f766e" stroke="#5eead4" stroke-width="2"/>
+      <polygon points="18,44 42,44 18,18" fill="#facc15" stroke="#ca8a04" stroke-width="1.2"/>
+      <circle cx="38" cy="22" r="5" fill="#ffffff" stroke="#0f766e" stroke-width="1.5"/>
+      <line x1="38" y1="27" x2="30" y2="44" stroke="#ffffff" stroke-width="2"/>
+    </svg>`;
+  }
+  return `<svg width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="27" fill="#1e3a8a" stroke="#ca8a04" stroke-width="2"/>
+    <polygon points="30,12 48,22 30,30 12,22" fill="#eab308"/>
+    <path d="M 18 25 L 18 36 C 18 42 42 42 42 36 L 42 25" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <line x1="48" y1="22" x2="48" y2="38" stroke="#ca8a04" stroke-width="2"/>
+    <circle cx="48" cy="39" r="2" fill="#ca8a04"/>
+  </svg>`;
+}
+
+const DEF_DOC = { ...INSTANSI_PRESETS.kampus, scope:'ringkasan', orient:'landscape', showSig:true };
+
+function jadwal(n, tipe){
+  const isRumah = tipe === 'rumah';
+  if(isRumah){
+    const sn = 2*n + 1;
+    const E = 6 + 3*n;
+    return {
+      p1:[1,1], p2:[1,1], p3:[1,1], p4:[1,1],
+      s1:[2,2], s2:[4,sn],
+      a1:[4+2,sn], a2:[4+4,sn], a3:[4+2,2], a4:[4+2,2],
+      a5:[4+sn,2], a5b:[4+sn+1,2], a5c:[4+sn+2,1], a5d:[4+sn+1,1],
+      a6:[4+sn+2,2], a7:[4+sn+3,2],
+      m1:[4+sn+3,2], m2:[4+2,2], m3:[4+5,1], m4:[4+4,1], m5:[3,2], m6:[4+sn+4,1], m7:[4+sn,1],
+      f1:[4+sn+4,2], f2:[4+sn+3,1], f3:[E,1]
+    };
+  } else {
+    const sn = 4*n;
+    const E = 7 + sn;
+    return {
+      p1:[1,1], p2:[1,1], p3:[1,2], p4:[2,2],
+      s1:[4,3], s2:[7,sn],
+      a1:[11,sn], a2:[13,sn], a3:[14,2*n+2], a4:[14,2*n+2],
+      a5:[E-2,3], a6:[E+2,3], a7:[E+2,3],
+      m1:[12,sn], m2:[11,sn], m3:[13,sn], m4:[E,3], m5:[11,sn], m6:[E+1,3], m7:[E+1,3],
+      f1:[E+3,3], f2:[E+1,2], f3:[E+5,1]
+    };
+  }
+}
+
+let S;
+// --- KALENDER PELAKSANAAN PROYEK & TANGGAL REALISTIS ---
+function fmtDateIndo(d, withYear = true){
+  if(!d || isNaN(d.getTime())) return '-';
+  const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = months[d.getMonth()];
+  return withYear ? `${day} ${month} ${d.getFullYear()}` : `${day} ${month.slice(0,3)}`;
+}
+
+function getProjectDates(){
+  const startStr = (S && S.p && S.p.tgl_mulai) ? S.p.tgl_mulai : '2026-08-01';
+  const startDate = new Date(startStr + 'T00:00:00');
+  const r = (typeof hit === 'function') ? hit() : { W: 16 };
+  const totalWeeks = r.W || 16;
+  const totalDays = totalWeeks * 7;
+  const endDate = new Date(startDate.getTime() + (totalDays - 1) * 86400000);
+  return { startDate, endDate, totalWeeks, totalDays };
+}
+
+function updateCalendarDisplay(){
+  const startInput = document.getElementById('projStartDate');
+  if(!startInput) return;
+  if(!S.p.tgl_mulai){
+    S.p.tgl_mulai = '2026-08-01';
+  }
+  startInput.value = S.p.tgl_mulai;
+
+  const dInfo = getProjectDates();
+  const phoEl = document.getElementById('calcPhoDate');
+  const daysEl = document.getElementById('calcTotalDays');
+  if(phoEl) phoEl.textContent = fmtDateIndo(dInfo.endDate, true);
+  if(daysEl) daysEl.textContent = `${dInfo.totalWeeks} Minggu (${dInfo.totalDays} Hari Kalender)`;
+
+  const targetWkInput = document.getElementById('autoTargetWeeks');
+  if(targetWkInput && document.activeElement !== targetWkInput){
+    targetWkInput.value = S.p.target_w || dInfo.totalWeeks;
+  }
+}
+
+function bindSchedControlEvents(){
+  const applyBtn = document.getElementById('applyAutoSchedBtn');
+  const targetWkInp = document.getElementById('autoTargetWeeks');
+  const startInp = document.getElementById('projStartDate');
+
+  if(applyBtn && targetWkInp){
+    applyBtn.onclick = () => {
+      const w = parseInt(targetWkInp.value) || 16;
+      setJadwal(w);
+      renderPek();
+      refresh();
+      renderDoc();
+      updateCalendarDisplay();
+    };
+  }
+
+  document.querySelectorAll('[data-sched-weeks]').forEach(btn => {
+    btn.onclick = () => {
+      const w = parseInt(btn.dataset.schedWeeks) || 16;
+      if(targetWkInp) targetWkInp.value = w;
+      setJadwal(w);
+      renderPek();
+      refresh();
+      renderDoc();
+      updateCalendarDisplay();
+    };
+  });
+
+  if(startInp){
+    startInp.onchange = e => {
+      S.p.tgl_mulai = e.target.value;
+      renderAll();
+      refresh();
+      updateCalendarDisplay();
+    };
+  }
+}
+
+function setJadwal(customTargetW){
+  const n = S.p.n || 1, isRumah = S.p.tipe === 'rumah';
+  const targetW = customTargetW ? parseInt(customTargetW) : (parseInt(S.p.target_w) || (isRumah ? 12 : 16));
+  S.p.target_w = targetW;
+
+  let U, R;
+  if(isRumah){
+    const baseW = 12;
+    const ratio = Math.max(0.4, targetW / baseW);
+    
+    const uP = Math.max(1, Math.round(1 * ratio));
+    const uS1 = Math.max(1, Math.round(2 * ratio));
+    const uS2 = Math.max(2, Math.round((2*n + 1) * ratio));
+    const uDinding = Math.max(2, Math.round(3 * ratio));
+    const uPintu = Math.max(1, Math.round(2 * ratio));
+    const uAtap = Math.max(1, Math.round(2 * ratio));
+    const uPlafon = Math.max(1, Math.round(2 * ratio));
+    const uLantai = Math.max(1, Math.round(2 * ratio));
+    const uMep = Math.max(1, Math.round(2 * ratio));
+    const uCat = Math.max(1, Math.round(2 * ratio));
+    const uFinish = Math.max(1, Math.round(1 * ratio));
+
+    U = {
+      p1: uP, p2: uP, p3: uP, p4: uP,
+      s1: uS1, s2: uS2,
+      a1: uDinding, a2: uDinding, a3: uPintu, a4: uPintu,
+      a5: uAtap, a5b: uAtap, a5c: Math.max(1, Math.round(uAtap*0.6)), a5d: Math.max(1, Math.round(uAtap*0.6)),
+      a6: uPlafon, a7: uLantai,
+      m1: uMep, m2: uMep, m3: Math.max(1, Math.round(uMep*0.6)), m4: 1, m5: uMep, m6: Math.max(1, Math.round(uMep*0.6)), m7: 1,
+      f1: uCat, f2: Math.max(1, Math.round(uCat*0.6)), f3: uFinish
+    };
+
+    const lagS2 = Math.max(1, Math.round(1 * ratio));
+    const lagDinding = Math.max(1, Math.round(uS2 * 0.5));
+    const lagAtap = Math.max(0, uS2 - 1);
+    
+    R = {
+      p4:['p1', uP], 
+      s1:['p4', uP], 
+      s2:['s1', lagS2],
+      a1:['s2', lagDinding], 
+      a2:['a1', Math.max(1, Math.round(uDinding*0.6))], 
+      a3:['a1', Math.max(1, Math.round(uDinding*0.6))], 
+      a4:['a1', Math.max(1, Math.round(uDinding*0.6))],
+      a5:['s2', lagAtap], 
+      a5b:['a5', 1], 
+      a5c:['a5b', 1], 
+      a5d:['a5', 1],
+      a6:['a5b', uAtap], 
+      a7:['a6', 1],
+      m5:['s1', 1], 
+      m2:['a1', 1], 
+      m3:['a2', 1], 
+      m4:['m2', 1],
+      m1:['a6', 1], 
+      m6:['a7', 1], 
+      m7:['s2', uS2],
+      f1:['a6', uPlafon], 
+      f2:['a7', 0], 
+      f3:['f1', uCat]
+    };
+  } else {
+    const baseW = 16;
+    const ratio = Math.max(0.4, targetW / baseW);
+
+    const uP = Math.max(1, Math.round(1.5 * ratio));
+    const uS1 = Math.max(2, Math.round(3 * ratio));
+    const uS2 = Math.max(3, Math.round((2*n + 4) * ratio));
+    const uDinding = Math.max(2, Math.round(4 * ratio));
+    const uBukaan = Math.max(2, Math.round(3 * ratio));
+    const uAtap = Math.max(2, Math.round(3 * ratio));
+    const uPlafon = Math.max(2, Math.round(3 * ratio));
+    const uLantai = Math.max(2, Math.round(3 * ratio));
+    const uMep = Math.max(2, Math.round(3 * ratio));
+    const uCat = Math.max(2, Math.round(3 * ratio));
+    const uFinish = Math.max(1, Math.round(1 * ratio));
+
+    U = {
+      p1: uP, p2: uP, p3: uP, p4: uP,
+      s1: uS1, s2: uS2,
+      a1: uDinding, a2: uDinding, a3: uBukaan, a4: uBukaan,
+      a5: uAtap, a6: uPlafon, a7: uLantai,
+      m1: uMep, m2: uMep, m3: uMep, m4: Math.max(1, Math.round(uMep*0.6)), m5: uMep, m6: Math.max(1, Math.round(uMep*0.6)), m7: uMep,
+      f1: uCat, f2: Math.max(1, Math.round(uCat*0.7)), f3: uFinish
+    };
+
+    const lagS2 = Math.max(1, Math.round(2 * ratio));
+    const lagDinding = Math.max(2, Math.round(uS2 * 0.45));
+    const lagAtap = Math.max(1, uS2 - 1);
+
+    R = {
+      p4:['p1', uP], 
+      s1:['p4', uP], 
+      s2:['s1', lagS2],
+      a1:['s2', lagDinding], 
+      a2:['a1', Math.max(1, Math.round(uDinding*0.6))], 
+      a3:['a1', Math.max(1, Math.round(uDinding*0.7))], 
+      a4:['a1', Math.max(1, Math.round(uDinding*0.7))],
+      a5:['s2', lagAtap], 
+      a6:['s2', uS2], 
+      a7:['s2', uS2],
+      m1:['a1', 1], 
+      m2:['a1', 0], 
+      m3:['a1', 1], 
+      m5:['a1', 0],
+      m4:['s2', uS2], 
+      m6:['s2', uS2 + 1], 
+      m7:['s2', uS2 + 1],
+      f1:['a6', uPlafon], 
+      f2:['s2', uS2], 
+      f3:['f1', uCat]
+    };
+  }
+
+  S.items.forEach(it=>{
+    if(!(it.id in U)) return;
+    it.u = U[it.id];
+    it.m = 1;
+    it.pre = '';
+    it.lag = 0;
+    const r = R[it.id];
+    if(r && S.items.some(x=>x.id===r[0])){
+      it.pre = r[0];
+      const durPre = U[r[0]] || 1;
+      it.lag = r[1] - durPre;
+    }
+  });
+
+  sched();
+
+  let curW = Math.max(1, ...S.items.map(x => (x.em || x.m) + x.u - 1));
+  const diff = targetW - curW;
+  if(diff !== 0){
+    const itF3 = S.items.find(x => x.id === 'f3');
+    const itS2 = S.items.find(x => x.id === 's2');
+    if(diff > 0){
+      if(itS2) itS2.u += Math.floor(diff * 0.5);
+      if(itF3) itF3.u += (diff - Math.floor(diff * 0.5));
+    } else {
+      if(itS2 && itS2.u + diff >= 2) itS2.u += diff;
+      else if(itF3 && itF3.u + diff >= 1) itF3.u += diff;
+    }
+    sched();
+  }
+}
+
+function loadBuildingItems(tipe){
+  const template = tipe === 'rumah' ? ITEM_RUMAH : ITEM_GEDUNG;
+  const ahOf = tipe === 'rumah' ? AH_OF_RUMAH : AH_OF_GEDUNG;
+  const customItems = (S.items || []).filter(x => x.custom);
+
+  const newItems = template.map(([id, d, nm, b, k, s, h]) => ({
+    id, d, nm, b, k, s, h,
+    m: 1, u: 1,
+    a: ahOf[id] || '',
+    pre: '', lag: 0,
+    kp: KP0[id] ? JSON.parse(JSON.stringify(KP0[id])) : null
+  }));
+
+  S.items = newItems.concat(customItems);
+  setJadwal();
+}
+
+function fresh(tipe){
+  const isRumah = tipe === 'rumah';
+  const defaultP = isRumah ? {
+    nama:'Rumah Tinggal 2 Lantai Tipe 160',
+    tipe:'rumah',
+    tgl_mulai:'2026-08-01',
+    target_w:12,
+    n:2,
+    A:80,
+    T:3.4,
+    K:0,
+    tanah:150,
+    wil:'kab',
+    gl:50,
+    gd:1.0,
+    keet:12,
+    atap_tipe:'genteng_keramik',
+    atap_kemiringan:30,
+    overstek:0.8,
+    sekat:1.25,
+    pintu:8,
+    jendela:10,
+    lp:1.8,
+    lj:1.5,
+    lampu:28,
+    kabel:550,
+    stopk:24,
+    toilet:2,
+    pipa:75
+  } : {
+    nama:'Gedung Perkantoran 3 Lantai',
+    tipe:'gedung',
+    tgl_mulai:'2026-08-01',
+    target_w:16,
+    n:3,
+    A:300,
+    T:3.6,
+    K:0,
+    tanah:800,
+    wil:'kab',
+    gl:250,
+    gd:1.5,
+    keet:24,
+    atap_tipe:'dak',
+    atap_kemiringan:0,
+    overstek:0,
+    sekat:1.3,
+    pintu:24,
+    jendela:30,
+    lp:1.9,
+    lj:1.8,
+    lampu:160,
+    kabel:3200,
+    stopk:90,
+    toilet:6,
+    pipa:280
+  };
+
+  const template = isRumah ? ITEM_RUMAH : ITEM_GEDUNG;
+  const ahOf = isRumah ? AH_OF_RUMAH : AH_OF_GEDUNG;
+
+  S={
+    p:defaultP,
+    opt:{profit:10,ppn:11,hspOh:true},
+    items:template.map(([id,d,nm,b,k,s,h])=>({
+      id,d,nm,b,k,s,h,
+      m:1,u:1,
+      a:ahOf[id]||'',
+      pre:'',lag:0,
+      kp:KP0[id]?JSON.parse(JSON.stringify(KP0[id])):null
+    })),
+    hb:Object.fromEntries(Object.entries(HB0).map(([c,v])=>[c,{n:v[0],s:v[1],h:v[2]}])),
+    ah:Object.fromEntries(Object.entries(AH0).map(([c,v])=>[c,{n:v[0],s:v[1],k:{...v[2]}}])),
+    src:{wilayah:'Kabupaten Magelang',tahun:'Edisi I Tahun 2026',sumber:'HSP Konstruksi Kab. Magelang (data.jatengprov.go.id)'},
+    act:[],
+    doc:JSON.parse(JSON.stringify(DEF_DOC))
+  };
+  setJadwal();
+  return S;
+}
+
+function upgradeState(o){
+  if(!o) return;
+  if(!o.p) o.p={};
+  o.p.tipe = o.p.tipe || 'gedung';
+  if(!o.p.tgl_mulai) o.p.tgl_mulai = '2026-08-01';
+  if(!o.p.target_w) o.p.target_w = o.p.tipe === 'rumah' ? 12 : 16;
+  o.p.wil = o.p.wil || 'kab';
+  if(o.p.tipe === 'gedung'){
+    o.p.n = Math.min(10, Math.max(1, parseInt(o.p.n)||1));
+    o.p.atap_tipe = o.p.atap_tipe || 'dak';
+    if(o.p.atap_kemiringan === undefined) o.p.atap_kemiringan = 0;
+    if(o.p.overstek === undefined) o.p.overstek = 0;
+  } else {
+    o.p.n = Math.min(3, Math.max(1, parseInt(o.p.n)||1));
+    o.p.atap_tipe = o.p.atap_tipe || 'genteng_keramik';
+    if(o.p.atap_kemiringan === undefined) o.p.atap_kemiringan = 30;
+    if(o.p.overstek === undefined) o.p.overstek = 0.8;
+  }
+  if(!Array.isArray(o.act)) o.act=[];
+  if(!o.doc) o.doc=JSON.parse(JSON.stringify(DEF_DOC));
+  o.doc.logoType = o.doc.logoType || 'kampus';
+
+  if(!o.hb) o.hb={};
+  Object.keys(HB0).forEach(c=>{
+    if(!o.hb[c]) o.hb[c]={n:HB0[c][0],s:HB0[c][1],h:HB0[c][2]};
+  });
+  if(!o.ah) o.ah={};
+  Object.keys(AH0).forEach(c=>{
+    if(!o.ah[c]) o.ah[c]={n:AH0[c][0],s:AH0[c][1],k:{...AH0[c][2]}};
+  });
+  if(o.ah.pondasi && o.ah.pondasi.k && o.ah.pondasi.k.bekisting_pondasi===undefined){
+    o.ah.pondasi.k.bekisting_pondasi=3;
+  }
+  if(o.ah.beton && o.ah.beton.k && o.ah.beton.k.bekisting===undefined){
+    o.ah.beton.k.bekisting=6;
+  }
+  if(Array.isArray(o.items)){
+    o.items.forEach(it=>{
+      if(it.id==='s1' && Array.isArray(it.kp)){
+        const bk=it.kp.find(c=>!c.c||(c.n&&c.n.toLowerCase().includes('bekisting')));
+        if(bk){
+          bk.n='Bekisting pondasi & sloof (kayu bekisting)';
+          bk.k=bk.k||3;
+          if(!bk.h || bk.h===0) bk.h=220000;
+        }
+      }
+      if(it.id==='s2' && Array.isArray(it.kp)){
+        const bk=it.kp.find(c=>!c.c||(c.n&&c.n.toLowerCase().includes('bekisting')));
+        if(bk){
+          bk.n='Bekisting struktur atas (multiplek 12mm + scaffolding)';
+          bk.k=bk.k||6;
+          if(!bk.h || bk.h===0) bk.h=280000;
+        }
+      }
+    });
+  }
+  return o;
+}
+
+try{S=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){S=null}
+if(!S||!S.p||!S.items||!S.opt||!S.hb||!S.ah||!S.src)fresh();
+upgradeState(S);
+
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+
+/* ---------- Perhitungan ---------- */
+function kpHarga(c){return c.c?(HSP[c.c]?HSP[c.c][2][S.p.wil||'kab']||0:0):(c.h||0)}
+function setSrc(){const w=WIL[S.p.wil]||WIL.kab;S.src.wilayah=w.n;S.src.tahun=w.ed;S.src.sumber=w.sb;renderHrg()}
+function hsat(it){
+  if(it.kp){let t=0;it.kp.forEach(c=>{t+=c.k*kpHarga(c)});return t}
+  const A=it.a&&S.ah[it.a];if(!A)return it.h;
+  let t=0;for(const c in A.k)t+=A.k[c]*(S.hb[c]?S.hb[c].h:0);return t;
+}
+function sched(){
+  const by={},memo={},vis={};S.items.forEach(i=>by[i.id]=i);
+  const st=i=>{
+    if(memo[i.id]!==undefined)return memo[i.id];
+    if(vis[i.id])return Math.max(1,i.m);
+    vis[i.id]=1;
+    const p=by[i.pre];
+    return memo[i.id]=p?Math.max(1,st(p)+p.u+(i.lag||0)):Math.max(1,i.m);
+  };
+  S.items.forEach(i=>{i.em=st(i)});
+}
+
+function drv(){
+  const P=S.p, A=P.A, n=P.n, K=P.K>0?P.K:4*Math.sqrt(A);
+  const bruto=K*P.T*n*P.sekat;
+  const buk=P.pintu*P.lp+P.jendela*P.lj;
+  const isRumah = P.tipe === 'rumah';
+
+  let atap=0, lisplank=0, nok=0;
+
+  if(isRumah){
+    const Lb = Math.sqrt(A);
+    const ov = parseFloat(P.overstek)>=0 ? parseFloat(P.overstek) : 0.8;
+    const kemiringan = parseFloat(P.atap_kemiringan)>0 ? parseFloat(P.atap_kemiringan) : 30;
+    const rad = kemiringan * Math.PI / 180;
+    const cosAngle = Math.max(0.5, Math.cos(rad));
+
+    const pAtap = Lb + 2 * ov;
+    const luasProyeksi = pAtap * pAtap;
+    atap = Math.round(luasProyeksi / cosAngle);
+    lisplank = Math.round(4 * pAtap);
+    nok = Math.round(1.2 * Lb);
+  } else {
+    atap = Math.round(A * 1.15);
+    lisplank = Math.round(K);
+    nok = 0;
+  }
+
+  return {
+    TANAH:P.tanah,
+    PAGAR:4*Math.sqrt(P.tanah),
+    LS:1,
+    MAN:1,
+    KEET:P.keet||0,
+    GALIAN:P.gl*P.gd,
+    LT:A*n,
+    LANTAI:n,
+    DINDING:Math.max(0,bruto-buk),
+    ATAP:atap,
+    LISPLANK:lisplank,
+    NOK:nok,
+    PINTU:P.pintu,
+    JENDELA:P.jendela,
+    LAMPU:P.lampu,
+    KABEL:P.kabel,
+    STOPK:P.stopk,
+    PIPA:P.pipa,
+    TOILET:P.toilet,
+    _K:K,
+    _bruto:bruto,
+    _buk:buk,
+    _isRumah:isRumah
+  };
+}
+
+function hit(){
+  const D=drv(),dv=[0,0,0,0,0];
+  sched();const mat={};let subH=0;
+  const rows=S.items.map(it=>{
+    const vol=D[it.b]*it.k,hs=hsat(it),jml=vol*hs;
+    dv[it.d]+=jml;
+    if(it.kp)subH+=jml;
+    if(!it.kp&&it.a&&S.ah[it.a])for(const c in S.ah[it.a].k)mat[c]=(mat[c]||0)+vol*S.ah[it.a].k[c];
+    return{...it,vol,hs,jml,mm:it.m,m:it.em};
+  });
+  const sub=dv.reduce((a,b)=>a+b,0),W=Math.max(1,...rows.map(r=>r.m+r.u-1)),wk=Array(W).fill(0);
+  rows.forEach(r=>{
+    const u=Math.max(1,r.u),m=Math.max(1,r.m),w=sub?r.jml/sub*100/u:0;
+    for(let i=m;i<m+u;i++)wk[i-1]=(wk[i-1]||0)+w;
+  });
+  let c=0;const cum=wk.map(v=>(c+=v));
+  const oh=(sub-(S.opt.hspOh?subH:0))*S.opt.profit/100,ppn=(sub+oh)*S.opt.ppn/100;
+
+  if(!Array.isArray(S.act))S.act=[];
+  const actWk=Array(W).fill(null);
+  let hasAct=false,lastActIdx=-1;
+  for(let i=0;i<W;i++){
+    const v=S.act[i];
+    if(v!==undefined&&v!==null&&v!==''&&!isNaN(v)){
+      actWk[i]=parseFloat(v);
+      hasAct=true;
+      lastActIdx=i;
+    }
+  }
+  let cAct=0;
+  const actCum=actWk.map((v,i)=>{
+    if(i<=lastActIdx&&v!==null){cAct+=v;return cAct}
+    return null;
+  });
+  const dev=actCum.map((v,i)=>(v!==null?v-cum[i]:null));
+
+  return{D,rows,dv,sub,oh,ppn,total:sub+oh+ppn,wk,cum,W,mat,subH,actWk,actCum,dev,hasAct,lastActIdx};
+}
+
+/* ---------- Tab 1: parameter ---------- */
+const P_GROUPS = [
+  {
+    title: '🏢 Jenis Bangunan & Wilayah HSP',
+    desc: 'Pilihan gedung (1–10 lt) atau rumah tinggal (1–3 lt), jumlah lantai, dan wilayah acuan',
+    keys: ['nama','tipe','wil','n','A','T','K']
+  },
+  {
+    title: '🚜 Lahan, Galian & Sistem Atap',
+    desc: 'Kavling, volume galian tanah, serta geometri atap miring / dak',
+    keys: ['tanah','gl','gd','keet','atap_tipe','atap_kemiringan','overstek']
+  },
+  {
+    title: '🚪 Bukaan, Dinding & Utilitas MEP',
+    desc: 'Bukaan pintu/jendela, partisi interior, kelistrikan, dan sanitasi',
+    keys: ['sekat','pintu','jendela','lp','lj','lampu','kabel','stopk','toilet','pipa']
+  }
+];
+
+function renderField(k){
+  const item = PF.find(p=>p[0]===k);
+  if(!item) return '';
+  const [key, label, unit] = item;
+  const isRumah = S.p.tipe === 'rumah';
+
+  if(key === 'nama'){
+    return `<label class="param-item" style="grid-column: 1 / -1"><span class="param-lbl">${label}</span><input data-p="nama" value="${esc(S.p.nama)}" placeholder="Contoh: Gedung Perkantoran / Rumah Tinggal"></label>`;
+  }
+  if(key === 'tipe'){
+    return `<label class="param-item" style="grid-column: 1 / -1"><span class="param-lbl">${label}</span><select data-p="tipe" style="font-weight:700;color:var(--accent)">
+      <option value="gedung" ${!isRumah?'selected':''}>🏢 Gedung Bertingkat / Kantor (1–10 Lantai)</option>
+      <option value="rumah" ${isRumah?'selected':''}>🏡 Bangunan Rumah Tinggal (1–3 Lantai)</option>
+    </select></label>`;
+  }
+  if(key === 'wil'){
+    return `<label class="param-item"><span class="param-lbl">${label}</span><select data-p="wil">${Object.keys(WIL).map(w=>`<option value="${w}" ${S.p.wil===w?'selected':''}>${WIL[w].n}</option>`).join('')}</select></label>`;
+  }
+  if(key === 'n'){
+    const range = isRumah ? [1,2,3] : [1,2,3,4,5,6,7,8,9,10];
+    return `<label class="param-item"><span class="param-lbl">${label} (${isRumah?'1–3 Lantai':'1–10 Lantai'})</span><select data-p="n">${range.map(i=>`<option value="${i}" ${S.p.n===i?'selected':''}>${i} Lantai</option>`).join('')}</select></label>`;
+  }
+  if(key === 'atap_tipe'){
+    if(isRumah){
+      return `<label class="param-item"><span class="param-lbl">${label}</span><select data-p="atap_tipe">
+        <option value="genteng_keramik" ${S.p.atap_tipe==='genteng_keramik'?'selected':''}>Genteng Keramik Berglazur</option>
+        <option value="genteng_beton" ${S.p.atap_tipe==='genteng_beton'?'selected':''}>Genteng Beton Flat Monier</option>
+        <option value="genteng_metal" ${S.p.atap_tipe==='genteng_metal'?'selected':''}>Genteng Metal Pasir</option>
+        <option value="spandek" ${S.p.atap_tipe==='spandek'?'selected':''}>Atap Seng Gelombang / Spandek</option>
+      </select></label>`;
+    } else {
+      return `<label class="param-item"><span class="param-lbl">${label}</span><select data-p="atap_tipe">
+        <option value="dak" ${S.p.atap_tipe==='dak'?'selected':''}>Plat Dak Beton Bertulang + Waterproofing</option>
+        <option value="spandek" ${S.p.atap_tipe==='spandek'?'selected':''}>Rangka Baja Profil / Atap Zincalume</option>
+      </select></label>`;
+    }
+  }
+  if(key === 'atap_kemiringan'){
+    return `<label class="param-item"><span class="param-lbl">${label}${unit?' ('+unit+')':''}</span><input type="number" step="any" min="0" max="60" data-p="atap_kemiringan" value="${S.p.atap_kemiringan||(isRumah?30:0)}" ${!isRumah?'disabled title="Gedung kantor menggunakan plat dak datar (0°)"':''}></label>`;
+  }
+  if(key === 'overstek'){
+    return `<label class="param-item"><span class="param-lbl">${label}${unit?' ('+unit+')':''}</span><input type="number" step="0.1" min="0" data-p="overstek" value="${S.p.overstek||(isRumah?0.8:0)}" ${!isRumah?'disabled title="Gedung menggunakan dinding parapet pembatas dak"':''}></label>`;
+  }
+
+  return `<label class="param-item"><span class="param-lbl">${label}${unit?' ('+unit+')':''}</span><input type="number" step="any" min="0" data-p="${key}" value="${S.p[key]}"></label>`;
+}
+
+function renderPar(){
+  const pfEl = $('#pf');
+  if(!pfEl) return;
+  pfEl.innerHTML = `<div class="param-section-grid">` +
+    P_GROUPS.map(g=>`
+      <div class="param-card">
+        <div class="param-card-head">
+          <div class="param-card-title">${g.title}</div>
+          <div class="param-card-desc">${g.desc}</div>
+        </div>
+        <div class="param-fields">
+          ${g.keys.map(k=>renderField(k)).join('')}
+        </div>
+      </div>
+    `).join('') +
+  `</div>`;
+
+  // Update roof compare box active status if present
+  const gBox = document.getElementById('roofTypeGedung');
+  const rBox = document.getElementById('roofTypeRumah');
+  if(gBox && rBox){
+    const isRumah = S.p.tipe === 'rumah';
+    gBox.classList.toggle('active', !isRumah);
+    rBox.classList.toggle('active', isRumah);
+  }
+}
+
+function renderDer(){
+  const D=drv(), isRumah=S.p.tipe==='rumah';
+  const tiles = [
+    {icon:isRumah?'🏡':'🏢', k:'Luas Lantai Total', v:fmt(D.LT)+' m²', sub:`${S.p.n} lantai × ${S.p.A} m²`},
+    {icon:'🧱', k:'Luas Dinding Bersih', v:fmt(D.DINDING)+' m²', sub:`Bruto: ${fmt(D._bruto)} m² − Bukaan: ${fmt(D._buk)} m²`},
+    {
+      icon:isRumah?'🏠':'🏗️',
+      k:isRumah?'Luas Atap Miring':'Estimasi Plat Dak Atap',
+      v:fmt(D.ATAP)+' m²',
+      sub:isRumah?`Sudut: ${S.p.atap_kemiringan||30}° | Overstek: ${S.p.overstek||0.8}m`:`Luas Lantai ${S.p.A} m² × 1.15`
+    },
+    {
+      icon:'📐',
+      k:isRumah?'Panjang Nok / Wuwungan':'Keliling Lisplank / Parapet',
+      v:isRumah?fmt(D.NOK)+" m'":fmt(D.LISPLANK)+" m'",
+      sub:isRumah?'Panjang bubungan nok genteng':'Keliling pembatas dak beton'
+    },
+    {
+      icon:isRumah?'🪵':'📏',
+      k:isRumah?'Keliling Lisplank Overstek':'Keliling Bangunan (K)',
+      v:isRumah?fmt(D.LISPLANK)+" m'":fmt(D._K)+' m',
+      sub:isRumah?'Lisplank GRC keliling cucuran atap':'Keliling lantai dasar bangunan'
+    },
+    {icon:'🚜', k:'Volume Galian Tanah', v:fmt(D.GALIAN)+' m³', sub:`Luas galian ${S.p.gl} m² × dlm ${S.p.gd} m`}
+  ];
+
+  const dt = $('#derTiles');
+  if(dt){
+    dt.innerHTML = tiles.map(t=>`
+      <div class="der-tile">
+        <div class="der-icon">${t.icon}</div>
+        <div class="der-body">
+          <div class="k">${t.k}</div>
+          <div class="v">${t.v}</div>
+          <div class="sub muted">${t.sub}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const R=[
+    ['Tipe Bangunan Terpilih', isRumah?'Rumah Tinggal (1–3 Lantai)':'Gedung Bertingkat (1–10 Lantai)', ''],
+    ['Luas lantai total', D.LT, 'm²'],
+    ['Keliling bangunan dipakai', D._K, 'm'],
+    ['Luas dinding bruto', D._bruto, 'm²'],
+    ['Luas bukaan (pintu + jendela)', D._buk, 'm²'],
+    ['Luas dinding bersih', D.DINDING, 'm²'],
+    ['Volume galian pondasi', D.GALIAN, 'm³'],
+    ['Keliling pagar sementara / bouwplank', D.PAGAR, 'm'],
+    [isRumah?'Luas penutup atap miring':'Luas plat dak beton atap', D.ATAP, 'm²'],
+    [isRumah?'Panjang bubungan / wuwungan nok':'-', D.NOK, isRumah?"m'":'-'],
+    ['Panjang lisplank atap / parapet', D.LISPLANK, "m'"]
+  ];
+  const tbD = $('#tbD tbody');
+  if(tbD) tbD.innerHTML=R.map(r=>`<tr><td>${r[0]}</td><td class="num">${typeof r[1]==='number'?fmt(r[1]):r[1]}</td><td>${r[2]}</td></tr>`).join('');
+}
+
+$('#pf').addEventListener('change', e=>{
+  const k = e.target.dataset.p;
+  if(k === 'tipe'){
+    const newTipe = e.target.value;
+    if(newTipe !== S.p.tipe){
+      const confirmMsg = `Ganti tipe proyek ke ${newTipe === 'rumah' ? 'Bangunan Rumah Tinggal (1–3 Lantai)' : 'Gedung Bertingkat (1–10 Lantai)'}?\n\nParameter dan daftar item pekerjaan (termasuk komponen atap) akan disesuaikan. Item manual yang Anda tambahkan tetap tersimpan.`;
+      if(confirm(confirmMsg)){
+        S.p.tipe = newTipe;
+        if(newTipe === 'rumah'){
+          S.p.nama = (S.p.nama.includes('Gedung') || !S.p.nama) ? 'Rumah Tinggal 2 Lantai Tipe 160' : S.p.nama;
+          S.p.n = Math.min(3, Math.max(1, S.p.n || 2));
+          S.p.A = S.p.A > 200 ? 80 : S.p.A;
+          S.p.T = 3.4;
+          S.p.tanah = S.p.tanah > 400 ? 150 : S.p.tanah;
+          S.p.gl = S.p.gl > 150 ? 50 : S.p.gl;
+          S.p.gd = 1.0;
+          S.p.keet = 12;
+          S.p.atap_tipe = 'genteng_keramik';
+          S.p.atap_kemiringan = 30;
+          S.p.overstek = 0.8;
+          S.p.sekat = 1.25;
+          S.p.pintu = 8;
+          S.p.jendela = 10;
+          S.p.lampu = 28;
+          S.p.kabel = 550;
+          S.p.stopk = 24;
+          S.p.toilet = 2;
+          S.p.pipa = 75;
+        } else {
+          S.p.nama = (S.p.nama.includes('Rumah') || !S.p.nama) ? 'Gedung Perkantoran 3 Lantai' : S.p.nama;
+          S.p.n = Math.min(10, Math.max(1, S.p.n || 3));
+          S.p.A = S.p.A < 150 ? 300 : S.p.A;
+          S.p.T = 3.6;
+          S.p.tanah = S.p.tanah < 300 ? 800 : S.p.tanah;
+          S.p.gl = S.p.gl < 100 ? 250 : S.p.gl;
+          S.p.gd = 1.5;
+          S.p.keet = 24;
+          S.p.atap_tipe = 'dak';
+          S.p.atap_kemiringan = 0;
+          S.p.overstek = 0;
+          S.p.sekat = 1.3;
+          S.p.pintu = 24;
+          S.p.jendela = 30;
+          S.p.lampu = 160;
+          S.p.kabel = 3200;
+          S.p.stopk = 90;
+          S.p.toilet = 6;
+          S.p.pipa = 280;
+        }
+        loadBuildingItems(newTipe);
+        renderAll();
+      } else {
+        e.target.value = S.p.tipe;
+      }
+    }
+  } else if(k === 'atap_tipe'){
+    S.p.atap_tipe = e.target.value;
+    if(S.p.tipe === 'rumah'){
+      const gItem = S.items.find(x => x.id === 'a5b');
+      if(gItem){
+        if(S.p.atap_tipe === 'genteng_keramik'){
+          gItem.nm = 'Penutup atap genteng keramik berglazur';
+          if(S.hb.genteng_keramik) S.hb.genteng_keramik.h = 110000;
+        } else if(S.p.atap_tipe === 'genteng_beton'){
+          gItem.nm = 'Penutup atap genteng beton flat monier';
+          if(S.hb.genteng_keramik) S.hb.genteng_keramik.h = 85000;
+        } else if(S.p.atap_tipe === 'genteng_metal'){
+          gItem.nm = 'Penutup atap genteng metal berpasir';
+          if(S.hb.genteng_keramik) S.hb.genteng_keramik.h = 65000;
+        } else if(S.p.atap_tipe === 'spandek'){
+          gItem.nm = 'Penutup atap spandek / zincalume gelombang';
+          if(S.hb.genteng_keramik) S.hb.genteng_keramik.h = 60000;
+        }
+      }
+    }
+    refresh();
+  }
+});
+
+$('#pf').addEventListener('input', e=>{
+  const k=e.target.dataset.p; if(!k) return;
+  if(k === 'tipe' || k === 'atap_tipe') return;
+  if(k === 'nama'){
+    S.p.nama = e.target.value;
+  } else if(k === 'wil'){
+    S.p.wil = e.target.value;
+    setSrc();
+    updKp();
+  } else if(k === 'n'){
+    const maxN = S.p.tipe === 'rumah' ? 3 : 10;
+    S.p.n = Math.min(maxN, Math.max(1, parseInt(e.target.value)||1));
+    setJadwal();
+    renderPek();
+  } else {
+    S.p[k] = parseFloat(e.target.value) || 0;
+  }
+  refresh();
+});
+
+/* ---------- Tab 2: pekerjaan ---------- */
+const inp=(id,f,v,lb)=>`<input type="number" step="any" min="0" data-id="${id}" data-f="${f}" value="${v}" aria-label="${lb}">`;
+const SRC=x=>x.custom?'Manual (input sendiri)':x.kp?(x.kp.some(c=>!c.c&&!c.h)?'HSP Magelang ⚠️ komponen bekisting belum berharga':'HSP Magelang + AHSP Standar'):x.a?'AHSP Standar':'Contoh (bukan data Magelang)';
+const inp2=(id,f,v,lb)=>`<input type="number" step="1" data-id="${id}" data-f="${f}" value="${v}" aria-label="${lb}">`;
+const preSel=x=>`<select data-id="${x.id}" data-f="pre" aria-label="Setelah pekerjaan"><option value="">— (mulai manual)</option>${S.items.filter(y=>y.id!==x.id).map(y=>`<option value="${y.id}" ${x.pre===y.id?'selected':''}>${esc(y.nm.slice(0,26))}</option>`).join('')}</select>`;
+
+function renderPek(){
+  $('#pek').innerHTML=DIV.map((dn,di)=>`<h2>${di+1}. ${dn} <span class="muted" id="sd${di}"></span></h2><div class="box"><table><thead><tr><th>Pekerjaan</th><th>Dasar volume</th><th class="num">Koef.</th><th class="num">Volume</th><th>Sat.</th><th class="num">Harga satuan</th><th class="num">Jumlah</th><th class="num">Durasi (mgg)</th><th>Setelah pekerjaan</th><th class="num">Jeda (mgg)</th><th class="num">Mulai (mgg)</th><th>Sumber harga</th></tr></thead><tbody>`+
+    S.items.filter(x=>x.d===di).map(x=>`<tr><td>${x.custom?`<input class="nm" data-id="${x.id}" data-f="nm" value="${esc(x.nm)}" aria-label="Nama pekerjaan"> <button class="x" data-del="${x.id}" aria-label="Hapus pekerjaan">×</button>`:esc(x.nm)}</td><td class="muted">${DL[x.b]||x.b}</td><td>${inp(x.id,'k',x.k,'Koefisien')}</td><td class="num" id="v_${x.id}"></td><td>${x.s}</td><td${x.a||x.kp?` class="num" id="h_${x.id}"`:''}>${x.a||x.kp?'':inp(x.id,'h',x.h,'Harga satuan').replace('<input','<input class="mn"')}</td><td class="num" id="j_${x.id}"></td><td>${inp(x.id,'u',x.u,'Durasi')}</td><td>${preSel(x)}</td><td>${inp2(x.id,'lag',x.lag,'Jeda')}</td><td>${inp(x.id,'m',x.m,'Minggu mulai')}</td><td class="muted" id="s_${x.id}">${SRC(x)}</td></tr>`).join('')+
+    `</tbody></table></div>`).join('');
+  updPek();
+}
+function updPek(){
+  const r=hit();
+  r.rows.forEach(x=>{
+    const a=$('#v_'+x.id),b=$('#j_'+x.id),c=$('#h_'+x.id),m=document.querySelector(`[data-id="${x.id}"][data-f="m"]`);
+    if(a)a.textContent=fmt(x.vol);
+    if(b)b.textContent=rp(x.jml);
+    if(c)c.textContent=rp(x.hs);
+    if(m){m.disabled=!!x.pre;m.value=x.pre?x.m:x.mm}
+    const sc=$('#s_'+x.id);if(sc)sc.textContent=SRC(x);
+  });
+  r.dv.forEach((v,i)=>{const e=$('#sd'+i);if(e)e.textContent='· '+rp(v)});
+}
+$('#pek').addEventListener('input',e=>{
+  const id=e.target.dataset.id;if(!id)return;
+  const it=S.items.find(x=>x.id===id),f=e.target.dataset.f,v=parseFloat(e.target.value)||0;
+  if(f==='pre')it.pre=e.target.value;
+  else if(f==='nm')it.nm=e.target.value;
+  else it[f]=(f==='m'||f==='u')?Math.max(1,Math.round(v)):f==='lag'?Math.round(v):v;
+  refresh();
+});
+$('#jdBtn').onclick=()=>{setJadwal();renderPek();refresh()};
+$('#rsBtn').onclick=()=>{if(confirm('Ganti semua data dengan data contoh standar (termasuk bekisting & atap terisi)? Perubahanmu akan hilang.')){fresh(S.p.tipe);renderAll()}};
+
+/* ---------- Pekerjaan manual ---------- */
+$('#pek').addEventListener('click',e=>{const d=e.target.dataset.del;if(!d)return;S.items=S.items.filter(x=>x.id!==d);S.items.forEach(x=>{if(x.pre===d)x.pre=''});renderPek();refresh()});
+$('#addManual').onclick=()=>{
+  S.items.push({id:'x'+Date.now().toString(36),d:+$('#mDiv').value,nm:$('#mNm').value.trim()||'Pekerjaan manual',b:'MAN',k:parseFloat($('#mVol').value)||1,s:$('#mSat').value.trim()||'ls',h:parseFloat($('#mHrg').value)||0,m:1,u:2,a:'',pre:'',lag:0,kp:null,custom:true});
+  $('#mNm').value='';renderPek();refresh();
+};
+
+/* ---------- Komponen HSP Magelang ---------- */
+function renderKp(){
+  const open=new Set([...document.querySelectorAll('#kpBox details[open]')].map(d=>d.dataset.id));
+  $('#hspList').innerHTML=Object.keys(HSP).map(c=>`<option value="${esc(c)}">${esc(HSP[c][0].slice(0,70))}</option>`).join('');
+  $('#kpBox').innerHTML=S.items.filter(i=>i.kp).map(i=>`<details class="box" data-id="${i.id}" style="margin-bottom:8px" ${open.has(i.id)?'open':''}><summary style="padding:8px 12px;cursor:pointer;font-weight:600">${esc(i.nm)} (per ${i.s}) · <span id="kh_${i.id}"></span></summary><table style="min-width:720px"><thead><tr><th>Kode HSP</th><th>Uraian</th><th class="num">Koef.</th><th class="num">Harga manual</th><th class="num">Harga dipakai</th></tr></thead><tbody>`+
+    i.kp.map((c,j)=>`<tr><td><input data-kp="${i.id}" data-j="${j}" data-f="c" list="hspList" value="${esc(c.c||'')}" placeholder="kosong = manual" aria-label="Kode HSP"></td><td class="muted" id="ku_${i.id}_${j}"></td><td><input type="number" step="any" min="0" data-kp="${i.id}" data-j="${j}" data-f="k" value="${c.k}" aria-label="Koefisien"></td><td><input type="number" step="any" min="0" data-kp="${i.id}" data-j="${j}" data-f="h" value="${c.h||0}" ${c.c?'disabled':''} aria-label="Harga manual"></td><td class="num" id="kv_${i.id}_${j}"></td></tr>`).join('')+`</tbody></table></details>`).join('');
+  updKp();
+}
+function updKp(){
+  S.items.filter(i=>i.kp).forEach(i=>{
+    const e=$('#kh_'+i.id);if(e)e.textContent=rp(hsat(i));
+    i.kp.forEach((c,j)=>{
+      const u=$('#ku_'+i.id+'_'+j),v=$('#kv_'+i.id+'_'+j),H=HSP[c.c];
+      if(u)u.textContent=c.c?(H?H[0].slice(0,90)+' · per '+H[1]:'kode tidak ditemukan'):(c.n||'komponen manual');
+      if(v)v.textContent=rp(kpHarga(c));
+    });
+  });
+}
+$('#kpBox').addEventListener('input',e=>{
+  const t=e.target,id=t.dataset.kp;if(!id||t.dataset.f==='c')return;
+  S.items.find(x=>x.id===id).kp[+t.dataset.j][t.dataset.f]=parseFloat(t.value)||0;
+  updKp();refresh();
+});
+$('#kpBox').addEventListener('change',e=>{
+  const t=e.target,id=t.dataset.kp;if(!id||t.dataset.f!=='c')return;
+  S.items.find(x=>x.id===id).kp[+t.dataset.j].c=HSP[t.value]?t.value:'';
+  renderKp();refresh();
+});
+
+/* ---------- Tab 3: harga & AHSP ---------- */
+function renderHrg(){
+  $('#srcf').innerHTML=[['wilayah','Wilayah (kab/kota)'],['tahun','Tahun anggaran'],['sumber','Sumber data']].map(([k,l])=>`<label>${l}<input data-s="${k}" value="${esc(S.src[k])}"></label>`).join('');
+  $('#tbH tbody').innerHTML=Object.keys(S.hb).map(c=>`<tr><td class="muted font-mono">${c}</td><td>${esc(S.hb[c].n)}</td><td>${S.hb[c].s}</td><td><input type="number" step="any" min="0" data-hb="${c}" value="${S.hb[c].h}" aria-label="Harga ${esc(S.hb[c].n)}"></td></tr>`).join('');
+  $('#ahsp').innerHTML=Object.keys(S.ah).filter(a=>S.items.some(i=>i.a===a)).map(a=>{const A=S.ah[a];return `<details class="box" style="margin-bottom:8px"><summary style="padding:8px 12px;cursor:pointer;font-weight:600">${esc(A.n)} (per ${A.s}) · <span id="ah_${a}"></span></summary><table style="min-width:380px"><thead><tr><th>Bahan / upah</th><th>Sat.</th><th class="num">Koefisien</th></tr></thead><tbody>`+Object.keys(A.k).map(c=>`<tr><td>${esc(S.hb[c]?S.hb[c].n:c)}</td><td>${S.hb[c]?S.hb[c].s:''}</td><td><input type="number" step="any" min="0" data-ah="${a}" data-c="${c}" value="${A.k[c]}" aria-label="Koefisien ${esc(S.hb[c]?S.hb[c].n:c)}"></td></tr>`).join('')+`</tbody></table></details>`}).join('');
+  updAh();
+}
+function updAh(){Object.keys(S.ah).forEach(a=>{const e=$('#ah_'+a);if(e)e.textContent=rp(hsat({a}))})}
+$('#t-hrg').addEventListener('input',e=>{
+  const t=e.target,v=parseFloat(t.value)||0;
+  if(t.dataset.s)S.src[t.dataset.s]=t.value;
+  else if(t.dataset.hb)S.hb[t.dataset.hb].h=v;
+  else if(t.dataset.ah)S.ah[t.dataset.ah].k[t.dataset.c]=v;
+  else return;
+  updAh();refresh();
+});
+
+// Fitur 3: Tombol reset harga bekisting ke standar PUPR Magelang
+const btnResetBek = $('#resetBekistingBtn');
+if(btnResetBek){
+  btnResetBek.onclick=()=>{
+    S.items.forEach(it=>{
+      if(it.id==='s1'&&Array.isArray(it.kp)){
+        const bk=it.kp.find(c=>!c.c||(c.n&&c.n.toLowerCase().includes('bekisting')));
+        if(bk){ bk.h=220000; bk.n='Bekisting pondasi & sloof (kayu bekisting)'; bk.k=3; }
+      }
+      if(it.id==='s2'&&Array.isArray(it.kp)){
+        const bk=it.kp.find(c=>!c.c||(c.n&&c.n.toLowerCase().includes('bekisting')));
+        if(bk){ bk.h=280000; bk.n='Bekisting struktur atas (multiplek 12mm + scaffolding)'; bk.k=6; }
+      }
+    });
+    if(S.hb.bekisting) S.hb.bekisting.h=280000;
+    if(S.hb.bekisting_pondasi) S.hb.bekisting_pondasi.h=220000;
+    renderAll();
+    alert('✓ Harga standar bekisting berhasil diterapkan:\n- Pondasi & Sloof: Rp 220.000 / m² (koefisien 3 m²/m³)\n- Balok/Kolom/Plat: Rp 280.000 / m² (koefisien 6 m²/m³)');
+  };
+}
+
+function parseCSV(txt){return txt.split(/\r?\n/).map(l=>l.trim()).filter(l=>l).map(l=>{const o=[];let c='',q=false;for(const ch of l){if(ch==='"')q=!q;else if((ch===','||ch===';')&&!q){o.push(c.trim());c=''}else c+=ch}o.push(c.trim());return o})}
+function num(s){s=String(s).replace(/[Rp\s]/gi,'');if(/,\d{1,2}$/.test(s))s=s.replace(/\./g,'').replace(',','.');else s=s.replace(/[.,](?=\d{3}\b)/g,'');return parseFloat(s)}
+function impor(txt){
+  let ok=0;const miss=[];
+  parseCSV(txt).forEach((r,i)=>{
+    if(r.length<2)return;
+    const kode=(r[0]||'').toLowerCase().trim();
+    const nama=(r[1]||'').toLowerCase().trim();
+    const h=num(r[r.length-1]);
+    if(!isFinite(h)){
+      if(i>0 && kode!=='kode' && kode!=='id' && kode!=='no') miss.push(r[0]);
+      return;
+    }
+    // 1. Cek pada daftar Bahan Pokok & Upah Tenaga Kerja (S.hb)
+    const tg=S.hb[kode]||Object.values(S.hb).find(x=>x.n.toLowerCase()===nama||x.n.toLowerCase()===kode);
+    if(tg){
+      tg.h=h; ok++; return;
+    }
+    // 2. Cek pada daftar Item Pekerjaan Langsung (S.items)
+    const it=S.items.find(x=>x.id===kode||x.nm.toLowerCase()===nama||x.nm.toLowerCase()===kode);
+    if(it){
+      it.h=h;
+      if(it.kp){ it.kp=null; }
+      if(it.a){ it.a=''; }
+      ok++; return;
+    }
+    miss.push(r[0]);
+  });
+  $('#impMsg').textContent=ok+' harga berhasil diperbarui'+(miss.length?'; tidak cocok: '+miss.slice(0,8).join(', ')+(miss.length>8?'…':''):' ✓ Semua item cocok!');
+  renderHrg();renderPek();refresh();
+}
+$('#impBtn').onclick=()=>impor($('#impTxt').value);
+$('#csvFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{$('#impTxt').value=rd.result;impor(rd.result)};rd.readAsText(f)};
+$('#tplBtn').onclick=()=>{
+  const L=[['kode','nama','satuan','harga']];
+  // 1. Upah & Bahan Pokok Magelang (S.hb)
+  Object.keys(S.hb).forEach(c=>L.push([c,S.hb[c].n,S.hb[c].s,S.hb[c].h]));
+  // 2. Pekerjaan Langsung (Persiapan, Arsitektur, MEP, Finishing)
+  const directIds=['p1','p2','p3','p4','a3','a4','a5','a6','a7','m1','m2','m3','m4','m5','m6','m7','f1','f2','f3'];
+  directIds.forEach(id=>{
+    const it=S.items.find(x=>x.id===id);
+    if(it){
+      L.push([it.id, it.nm, it.s, it.h || hsat(it)]);
+    }
+  });
+  const t=L.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+  $('#impTxt').value=t;
+  try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+t],{type:'text/csv;charset=utf-8'}));a.download='template-harga-esticon.csv';document.body.appendChild(a);a.click();a.remove()}catch(e){}
+};
+
+/* ---------- Tab 4: hasil ---------- */
+function chart(wk,cum,actWk,actCum,lastActIdx){
+  const W=wk.length,w=760,h=320,l=46,r=50,t=16,b=34,pw=w-l-r,ph=h-t-b,mx=(Math.max(...wk)||1)*2,step=Math.ceil(W/12);
+  const dInfo = getProjectDates();
+  const startDate = dInfo.startDate;
+  let s=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Grafik kurva S rencana dan realisasi" style="width:100%;height:auto;display:block">`;
+  for(let g=0;g<=4;g++){
+    const y=t+ph*(1-g/4);
+    s+=`<line class="gl" x1="${l}" x2="${w-r}" y1="${y}" y2="${y}"/><text class="tx" x="${l-6}" y="${y+4}" text-anchor="end">${g*25}%</text><text class="tx" x="${w-r+6}" y="${y+4}">${fmt(mx*g/4)}%</text>`;
+  }
+  const bw=Math.max(2,pw/W*.6);
+  wk.forEach((v,i)=>{
+    const bh=v/mx*ph,x=l+pw*(i+.5)/W;
+    s+=`<rect class="bb" x="${x-bw/2}" y="${t+ph-bh}" width="${bw}" height="${bh}"><title>Minggu ${i+1} (${fmtDateIndo(new Date(startDate.getTime()+i*7*86400000),false)} - ${fmtDateIndo(new Date(startDate.getTime()+(i*7+6)*86400000),false)}): Rencana = ${fmt(v)}%</title></rect>`;
+    if(i%step===0||i===W-1)s+=`<text class="tx" x="${x}" y="${h-b+16}" text-anchor="middle">${i+1}</text>`;
+  });
+
+  const ptsPlan=[[l,t+ph]].concat(cum.map((v,i)=>[l+pw*(i+1)/W,t+ph*(1-Math.min(v,100)/100)]));
+  s+=`<polyline class="ln" points="${ptsPlan.map(p=>p.join(',')).join(' ')}"/>`;
+  ptsPlan.slice(1).forEach((p,i)=>{
+    s+=`<circle class="dot" cx="${p[0]}" cy="${p[1]}" r="3"><title>Minggu ${i+1} (${fmtDateIndo(new Date(startDate.getTime()+i*7*86400000),false)} - ${fmtDateIndo(new Date(startDate.getTime()+(i*7+6)*86400000),false)}): Kumulatif Rencana = ${fmt(cum[i])}%</title></circle>`;
+  });
+
+  if(lastActIdx!==undefined&&lastActIdx>=0){
+    const ptsAct=[[l,t+ph]];
+    for(let i=0;i<=lastActIdx;i++){
+      if(actCum[i]!==null) ptsAct.push([l+pw*(i+1)/W, t+ph*(1-Math.min(actCum[i],100)/100)]);
+    }
+    if(ptsAct.length>1){
+      s+=`<polyline class="ln-act" points="${ptsAct.map(p=>p.join(',')).join(' ')}"/>`;
+      ptsAct.slice(1).forEach((p,idx)=>{
+        const devVal=actCum[idx]-cum[idx];
+        const sgn=devVal>=0?'+':'';
+        s+=`<circle class="dot-act" cx="${p[0]}" cy="${p[1]}" r="4" stroke="var(--surface)" stroke-width="1.5"><title>Minggu ${idx+1}: Kumulatif Realisasi = ${fmt(actCum[idx])}% (Deviasi: ${sgn}${fmt(devVal)}%)</title></circle>`;
+      });
+      const pP=ptsPlan[lastActIdx+1];
+      const pA=ptsAct[ptsAct.length-1];
+      const devLatest=actCum[lastActIdx]-cum[lastActIdx];
+      s+=`<line x1="${pA[0]}" y1="${pP[1]}" x2="${pA[0]}" y2="${pA[1]}" stroke="${devLatest>=0?'var(--ok)':'var(--danger)'}" stroke-width="2" stroke-dasharray="3 3"/>`;
+    }
+  }
+
+  s+=`<text class="tx" x="${l+pw/2}" y="${h-4}" text-anchor="middle">Minggu ke-</text></svg>`;
+  return s;
+}
+
+function renderGantt(r){
+  const W=r.W,sub=r.sub;
+  let thWk='';
+  for(let i=1;i<=W;i++)thWk+=`<th class="gt-th-wk">${i}</th>`;
+
+  let rowsHtml='';
+  DIV.forEach((dn,di)=>{
+    const items=r.rows.filter(x=>x.d===di);
+    if(items.length===0)return;
+    const divSub=r.dv[di],divWeight=sub?(divSub/sub*100):0;
+    rowsHtml+=`<tr class="gt-div-row"><td colspan="3">${di+1}. ${esc(dn)}</td><td class="num">${fmt(divWeight)}%</td><td colspan="${W}"></td></tr>`;
+
+    items.forEach((it,idx)=>{
+      const itWeight=sub?(it.jml/sub*100):0;
+      const u=Math.max(1,it.u),m=Math.max(1,it.m);
+      const wkWeight=itWeight/u;
+
+      let cells='';
+      for(let w=1;w<=W;w++){
+        if(w>=m&&w<m+u){
+          cells+=`<td class="gt-cell"><span class="gt-bar" title="${esc(it.nm)}: Minggu ${w} = ${fmt(wkWeight)}%">${fmt(wkWeight)}%</span></td>`;
+        }else{
+          cells+=`<td class="gt-cell"></td>`;
+        }
+      }
+      rowsHtml+=`<tr><td style="text-align:center">${di+1}.${idx+1}</td><td>${esc(it.nm)}</td><td class="muted">${it.s}</td><td class="num font-mono">${fmt(itWeight)}%</td>${cells}</tr>`;
+    });
+  });
+
+  let footHtml='';
+  footHtml+=`<tr><td colspan="3"><strong>Rencana Mingguan (%)</strong></td><td class="num font-mono">100%</td>${r.wk.map(w=>`<td class="num font-mono" style="font-weight:600">${fmt(w)}%</td>`).join('')}</tr>`;
+  footHtml+=`<tr><td colspan="3"><strong>Kumulatif Rencana (%)</strong></td><td class="num font-mono">100%</td>${r.cum.map(c=>`<td class="num font-mono" style="font-weight:600">${fmt(c)}%</td>`).join('')}</tr>`;
+  footHtml+=`<tr><td colspan="3"><strong>Realisasi Mingguan (%)</strong></td><td class="num font-mono">${r.hasAct&&r.lastActIdx>=0?fmt(r.actCum[r.lastActIdx])+'%':'-'}</td>${r.actWk.map(a=>`<td class="num font-mono" style="font-weight:600;color:var(--real)">${a!==null?fmt(a)+'%':'-'}</td>`).join('')}</tr>`;
+  footHtml+=`<tr><td colspan="3"><strong>Kumulatif Realisasi (%)</strong></td><td class="num font-mono">${r.hasAct&&r.lastActIdx>=0?fmt(r.actCum[r.lastActIdx])+'%':'-'}</td>${r.actCum.map(a=>`<td class="num font-mono" style="font-weight:600;color:var(--real)">${a!==null?fmt(a)+'%':'-'}</td>`).join('')}</tr>`;
+  footHtml+=`<tr><td colspan="3"><strong>Deviasi (+/- %)</strong></td><td class="num font-mono">${r.hasAct&&r.lastActIdx>=0?(r.dev[r.lastActIdx]>=0?'+':'')+fmt(r.dev[r.lastActIdx])+'%':'-'}</td>${r.dev.map(d=>`<td class="num font-mono" style="font-weight:700;color:${d!==null?(d>=0?'var(--ok)':'var(--danger)'):'inherit'}">${d!==null?(d>=0?'+':'')+fmt(d)+'%':'-'}</td>`).join('')}</tr>`;
+
+  $('#tbGantt').innerHTML=`<thead>
+    <tr>
+      <th rowspan="2" style="width:36px">No</th>
+      <th rowspan="2" style="min-width:230px;text-align:left">Uraian Pekerjaan</th>
+      <th rowspan="2" style="width:45px">Sat.</th>
+      <th rowspan="2" class="num" style="width:70px">Bobot</th>
+      <th colspan="${W}" style="text-align:center">Minggu ke-</th>
+    </tr>
+    <tr>${thWk}</tr>
+  </thead>
+  <tbody>${rowsHtml}</tbody>
+  <tfoot class="gt-foot">${footHtml}</tfoot>`;
+}
+
+function renderHasil(){
+  const r=hit();
+  const isRumah=S.p.tipe==='rumah';
+
+  $('#tbR tbody').innerHTML=DIV.map((d,i)=>{
+    const amt = r.dv[i];
+    const pct = r.sub ? (amt / r.sub * 100) : 0;
+    return `<tr>
+      <td><strong>${i+1}. ${d}</strong></td>
+      <td class="num font-mono">${rp(amt)}</td>
+      <td class="num">
+        <div class="pct-bar-wrap">
+          <div class="pct-track"><div class="pct-fill" style="width:${Math.min(100, pct)}%"></div></div>
+          <span class="pct-val font-mono">${fmt(pct)}%</span>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+
+  $('#tbR tfoot').innerHTML=`<tr class="tot"><td>Jumlah biaya langsung</td><td class="num font-mono">${rp(r.sub)}</td><td class="num font-mono">100%</td></tr><tr><td>Overhead & profit (${S.opt.profit}%)</td><td class="num font-mono">${rp(r.oh)}</td><td></td></tr><tr><td>PPN (${S.opt.ppn}%)</td><td class="num font-mono">${rp(r.ppn)}</td><td></td></tr><tr class="grand"><td>Total RAB</td><td class="num font-mono">${rp(r.total)}</td><td></td></tr>`;
+  
+  const m2Cost = r.D.LT ? r.total / r.D.LT : 0;
+  const benchmarkText = isRumah
+    ? `Total RAB per m² luas lantai: ${rp(m2Cost)}. Standar estimasi rumah tinggal standar Magelang berkisar Rp 3,0 – 4,5 juta/m² (termasuk atap baja ringan & genteng). Durasi rencana: ${r.W} minggu.`
+    : `Total RAB per m² luas lantai: ${rp(m2Cost)}. Standar referensi Bappeda/PUPR Magelang untuk gedung bertingkat berkisar Rp 3,5 – 5,5 juta/m². Durasi rencana: ${r.W} minggu.`;
+  $('#m2').textContent = benchmarkText;
+  
+  const G={};
+  r.rows.forEach(x=>{
+    const g=x.custom?'Manual (input sendiri)':x.kp?'HSP '+S.src.wilayah+' + Bekisting Standar':x.a?'AHSP standar (komponen Magelang)':'Harga manual / analisis spesifik';
+    G[g]=G[g]||[0,0];
+    G[g][0]++;
+    G[g][1]+=x.jml;
+  });
+  $('#tbS tbody').innerHTML=Object.keys(G).map(g=>`<tr><td>${esc(g)}</td><td class="num font-mono">${G[g][0]}</td><td class="num font-mono">${rp(G[g][1])}</td><td class="num font-mono">${fmt(r.sub?G[g][1]/r.sub*100:0)}%</td></tr>`).join('');
+  
+  const w0=S.p.wil||'kab',w1=w0==='kab'?'kota':'kab';S.p.wil=w1;const t1=hit().total;S.p.wil=w0;
+  const cmp=' Pembanding wilayah: dengan HSP '+WIL[w1].n+', total RAB = '+rp(t1)+' ('+(r.total?((t1/r.total-1)*100).toFixed(1):'0')+'%).';
+  const pc=r.sub?r.subH/r.sub*100:0;
+  const bad=S.items.some(i=>i.kp&&i.kp.some(c=>!c.c&&!c.h));
+  const bekNote = bad
+    ? ' Perhatian: ada komponen bekisting/manual yang belum berharga (Rp 0), silakan gunakan tombol default pada tab Harga.'
+    : ' Komponen bekisting pondasi & struktur atas telah terisi harga standar AHSP Magelang/PUPR (Rp 220.000 & Rp 280.000/m²).';
+  $('#shNote').textContent='Dari total biaya langsung, '+fmt(pc)+'% dihitung otomatis memakai acuan HSP '+S.src.wilayah+bekNote+(S.opt.hspOh?' Overhead & profit hanya dikenakan pada komponen non-HSP.':'')+cmp;
+
+  // KPI Cards
+  let kpiHtml=`
+    <div class="kpi">
+      <span class="lbl">Durasi Proyek</span>
+      <b class="val font-mono">${r.W} Minggu</b>
+      <span class="muted">${r.rows.length} Uraian Pekerjaan (${isRumah?'Rumah Tinggal':'Gedung Bertingkat'})</span>
+    </div>
+    <div class="kpi">
+      <span class="lbl">Total Biaya Langsung</span>
+      <b class="val font-mono">${rp(r.sub)}</b>
+      <span class="muted">Total RAB: ${rp(r.total)}</span>
+    </div>`;
+  if(r.hasAct&&r.lastActIdx>=0){
+    const lastWk=r.lastActIdx+1,planVal=r.cum[r.lastActIdx],actVal=r.actCum[r.lastActIdx],devVal=r.dev[r.lastActIdx];
+    const isAhead=devVal>=0,bCls=devVal>0.05?'ok':devVal<-0.05?'danger':'warn';
+    const sTxt=devVal>0.05?'Maju (+'+fmt(devVal)+'%)':devVal<-0.05?'Terlambat ('+fmt(devVal)+'%)':'Sesuai Jadwal';
+    kpiHtml+=`
+      <div class="kpi">
+        <span class="lbl">Evaluasi Minggu ke-${lastWk}</span>
+        <b class="val font-mono">R: ${fmt(planVal)}% | A: ${fmt(actVal)}%</b>
+        <span class="muted">Rencana vs Realisasi</span>
+      </div>
+      <div class="kpi">
+        <span class="lbl">Status Deviasi Progres</span>
+        <b class="val font-mono" style="color:${isAhead?'var(--ok)':'var(--danger)'}">${(isAhead?'+':'')+fmt(devVal)}%</b>
+        <span class="badge ${bCls}">${sTxt}</span>
+      </div>`;
+  }else{
+    kpiHtml+=`
+      <div class="kpi">
+        <span class="lbl">Status Realisasi</span>
+        <b class="val font-mono" style="color:var(--muted)">Belum Diisi</b>
+        <span class="muted">Input pada tabel progres mingguan</span>
+      </div>
+      <div class="kpi">
+        <span class="lbl">Deviasi Progres</span>
+        <b class="val font-mono" style="color:var(--muted)">0.00%</b>
+        <span class="badge warn">Rencana berjalan normal</span>
+      </div>`;
+  }
+  $('#kpiBox').innerHTML=kpiHtml;
+
+  // Gantt Chart & Kurva S
+  renderGantt(r);
+  $('#chart').innerHTML=chart(r.wk,r.cum,r.actWk,r.actCum,r.lastActIdx);
+  $('#tbM tbody').innerHTML=Object.keys(r.mat).map(c=>`<tr><td>${esc(S.hb[c]?S.hb[c].n:c)}</td><td class="num font-mono">${fmt(r.mat[c])}</td><td>${S.hb[c]?S.hb[c].s:''}</td><td class="num font-mono">${rp(r.mat[c]*(S.hb[c]?S.hb[c].h:0))}</td></tr>`).join('');
+  $('#srcNote').textContent='Sumber harga: '+([S.src.sumber,S.src.wilayah,S.src.tahun].filter(x=>x).join(' · ')||'belum diisi (isi di tab Harga & AHSP)')+'.';
+
+  // Weekly Realization Table
+  const actEl=document.activeElement;
+  const activeIdx=actEl&&actEl.dataset&&actEl.dataset.actIdx!==undefined?actEl.dataset.actIdx:null;
+  const selS=actEl?actEl.selectionStart:null;
+
+  $('#tbW tbody').innerHTML=r.wk.map((v,i)=>{
+    const aVal=(S.act&&S.act[i]!==undefined&&S.act[i]!==null)?S.act[i]:'';
+    const cAct=r.actCum[i],dVal=r.dev[i];
+    let dBadge='-';
+    if(dVal!==null){
+      const cls=dVal>0.05?'ok':dVal<-0.05?'danger':'warn';
+      dBadge=`<span class="badge ${cls}">${dVal>=0?'+':''}${fmt(dVal)}%</span>`;
+    }
+    return `<tr>
+      <td class="num font-mono">${i+1}</td>
+      <td class="num font-mono">${fmt(v)}%</td>
+      <td class="num font-mono">${fmt(r.cum[i])}%</td>
+      <td><input type="number" step="0.01" min="0" max="100" class="act-inp" data-act-idx="${i}" value="${aVal}" placeholder="—" style="max-width:90px;text-align:right" aria-label="Realisasi minggu ${i+1}"></td>
+      <td class="num font-mono" style="color:var(--real);font-weight:600">${cAct!==null?fmt(cAct)+'%':'-'}</td>
+      <td class="num">${dBadge}</td>
+      <td class="num font-mono">${rp(v/100*r.sub)}</td>
+    </tr>`;
+  }).join('');
+
+  renderDoc();
+  if(activeIdx!==null){
+    const newEl=document.querySelector(`.act-inp[data-act-idx="${activeIdx}"]`);
+    if(newEl){newEl.focus();if(selS!==null)try{newEl.setSelectionRange(selS,selS)}catch(e){}}
+  }
+}
+
+/* Render Dokumen Resmi (Kop Surat & Lembar Pengesahan dengan Edit Langsung) */
+function renderDoc(){
+  const d = S.doc || DEF_DOC;
+  const isRumah = S.p.tipe === 'rumah';
+  const logoHtml = getInstansiLogo(d.logoType || 'kampus', d.logoCustom);
+  const tglTampil = d.tgl || new Date().toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'});
+  const r = hit();
+  const projDates = getProjectDates();
+
+  // Sinkronisasi Pengaturan Dokumen (Form Modal jika dibuka)
+  const setF = $('#docSettings');
+  if(setF){
+    const sync = (id, val) => { const el = $('#' + id); if(el && document.activeElement !== el) el.value = val || ''; };
+    sync('d_instansi', d.instansi);
+    sync('d_sub', d.sub);
+    sync('d_judul', d.judul);
+    sync('d_noDoc', d.noDoc);
+    sync('d_lokasi', d.lokasi);
+    sync('d_tgl', d.tgl);
+    sync('d_scope', d.scope);
+    sync('d_orient', d.orient);
+    const cb = $('#d_showSig'); if(cb) cb.checked = d.showSig !== false;
+    sync('d_p1_jab', d.p1_jab); sync('d_p1_peran', d.p1_peran); sync('d_p1_nm', d.p1_nm); sync('d_p1_id', d.p1_id);
+    sync('d_p2_jab', d.p2_jab); sync('d_p2_peran', d.p2_peran); sync('d_p2_nm', d.p2_nm); sync('d_p2_id', d.p2_id);
+    sync('d_p3_jab', d.p3_jab); sync('d_p3_peran', d.p3_peran); sync('d_p3_nm', d.p3_nm); sync('d_p3_id', d.p3_id);
+  }
+
+  // Render Kop Surat
+  const kEl = $('#printKop');
+  if(kEl){
+    kEl.innerHTML = `
+      <div class="kop-edit-notice no-print">
+        <div class="kop-notice-left">
+          <span class="edit-badge">✏️ Mode Edit Langsung Aktif</span>
+          <span class="edit-tip">Klik langsung teks pada Kop Surat &amp; Tanda Tangan untuk mengubah identitas instansi Anda.</span>
+        </div>
+        <div class="instansi-presets">
+          <span class="preset-lbl">Pilih Templat:</span>
+          <button type="button" class="btn-preset" data-preset="pupr" title="Terapkan templat Dinas PUPR">🏛️ Dinas PUPR</button>
+          <button type="button" class="btn-preset" data-preset="kontraktor" title="Terapkan templat PT Kontraktor">🏗️ Kontraktor</button>
+          <button type="button" class="btn-preset" data-preset="konsultan" title="Terapkan templat CV Konsultan">📐 Konsultan</button>
+          <button type="button" class="btn-preset" data-preset="kampus" title="Terapkan templat Universitas (Untidar)">🎓 Kampus</button>
+          <button type="button" class="btn-preset" id="uploadLogoBtn" title="Unggah logo instansi sendiri (PNG/JPG)">🖼️ Ganti Logo</button>
+          <input type="file" id="logoFileInp" accept="image/*" style="display:none">
+        </div>
+      </div>
+
+      <div class="kop-main">
+        <div class="kop-logo-wrap" id="kopLogoClick" title="Klik untuk mengganti logo instansi">
+          <div class="kop-logo-box">${logoHtml}</div>
+        </div>
+        <div class="kop-text">
+          <div class="doc-instansi inline-edit" contenteditable="true" data-doc-field="instansi" title="Klik langsung untuk mengedit Nama Instansi">${esc(d.instansi||'')}</div>
+          <div class="doc-sub inline-edit" contenteditable="true" data-doc-field="sub" title="Klik langsung untuk mengedit Bagian / Divisi / Alamat">${esc(d.sub||'')}</div>
+        </div>
+      </div>
+
+      <div class="doc-line"></div>
+      <div class="doc-title inline-edit" contenteditable="true" data-doc-field="judul" title="Klik langsung untuk mengedit Judul Laporan">${esc(d.judul||'')}</div>
+
+      <div class="doc-meta">
+        <div>
+          <div class="doc-meta-item">
+            <span class="k">Pekerjaan:</span>
+            <span class="v inline-edit" contenteditable="true" data-doc-field="namaPekerjaan" title="Klik untuk mengubah nama pekerjaan">${esc(S.p.nama)} (${isRumah?'Rumah Tinggal':'Gedung'} ${S.p.n} Lantai)</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Lokasi Proyek:</span>
+            <span class="v inline-edit" contenteditable="true" data-doc-field="lokasi" title="Klik untuk mengubah lokasi">${esc(d.lokasi||'')}</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Luas Lantai Total:</span>
+            <span class="v">${fmt(r.D.LT)} m²</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Waktu Pelaksanaan:</span>
+            <span class="v">${r.W} Minggu (${projDates.totalDays} Hari Kalender)</span>
+          </div>
+        </div>
+        <div>
+          <div class="doc-meta-item">
+            <span class="k">No. Dokumen:</span>
+            <span class="v inline-edit" contenteditable="true" data-doc-field="noDoc" title="Klik untuk mengubah nomor surat">${esc(d.noDoc||'')}</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Sumber Acuan:</span>
+            <span class="v">HSP ${esc(S.src.wilayah)} (${esc(S.src.tahun)})</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Tanggal Dokumen:</span>
+            <span class="v inline-edit" contenteditable="true" data-doc-field="tgl" title="Klik untuk mengubah tanggal">${esc(tglTampil)}</span>
+          </div>
+          <div class="doc-meta-item">
+            <span class="k">Jadwal (SPMK s.d. PHO):</span>
+            <span class="v">${fmtDateIndo(projDates.startDate, true)} s.d. ${fmtDateIndo(projDates.endDate, true)}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Lembar Pengesahan
+  const sEl = $('#printSig');
+  if(sEl){
+    sEl.innerHTML = (d.showSig !== false) ? `
+      <div class="sig-block">
+        <div class="sig-col">
+          <div class="sig-title inline-edit" contenteditable="true" data-doc-field="p1_jab" title="Klik untuk mengedit">${esc(d.p1_jab||'Diajukan oleh:')}</div>
+          <div class="sig-role inline-edit" contenteditable="true" data-doc-field="p1_peran" title="Klik untuk mengedit">${esc(d.p1_peran||'')}</div>
+          <div class="sig-space" title="Ruang tanda tangan &amp; stempel cap basah">
+            <span class="sig-stamp-placeholder no-print">( Ruang Paraf / Cap Stempel )</span>
+          </div>
+          <div class="sig-name inline-edit" contenteditable="true" data-doc-field="p1_nm" title="Klik untuk mengedit">( ${esc(d.p1_nm||'')} )</div>
+          <div class="sig-id inline-edit" contenteditable="true" data-doc-field="p1_id" title="Klik untuk mengedit">${esc(d.p1_id||'')}</div>
+        </div>
+        <div class="sig-col">
+          <div class="sig-title inline-edit" contenteditable="true" data-doc-field="p2_jab" title="Klik untuk mengedit">${esc(d.p2_jab||'Diperiksa oleh:')}</div>
+          <div class="sig-role inline-edit" contenteditable="true" data-doc-field="p2_peran" title="Klik untuk mengedit">${esc(d.p2_peran||'')}</div>
+          <div class="sig-space" title="Ruang tanda tangan &amp; stempel cap basah">
+            <span class="sig-stamp-placeholder no-print">( Ruang Paraf / Cap Stempel )</span>
+          </div>
+          <div class="sig-name inline-edit" contenteditable="true" data-doc-field="p2_nm" title="Klik untuk mengedit">( ${esc(d.p2_nm||'')} )</div>
+          <div class="sig-id inline-edit" contenteditable="true" data-doc-field="p2_id" title="Klik untuk mengedit">${esc(d.p2_id||'')}</div>
+        </div>
+        <div class="sig-col">
+          <div class="sig-title inline-edit" contenteditable="true" data-doc-field="p3_jab" title="Klik untuk mengedit">${esc(d.p3_jab||'Disetujui oleh:')}</div>
+          <div class="sig-role inline-edit" contenteditable="true" data-doc-field="p3_peran" title="Klik untuk mengedit">${esc(d.p3_peran||'')}</div>
+          <div class="sig-space" title="Ruang tanda tangan &amp; stempel cap basah">
+            <span class="sig-stamp-placeholder no-print">( Ruang Paraf / Cap Stempel )</span>
+          </div>
+          <div class="sig-name inline-edit" contenteditable="true" data-doc-field="p3_nm" title="Klik untuk mengedit">( ${esc(d.p3_nm||'')} )</div>
+          <div class="sig-id inline-edit" contenteditable="true" data-doc-field="p3_id" title="Klik untuk mengedit">${esc(d.p3_id||'')}</div>
+        </div>
+      </div>
+    ` : '';
+  }
+
+  bindInlineDocEvents();
+}
+
+function bindInlineDocEvents(){
+  document.querySelectorAll('.inline-edit').forEach(el => {
+    if(el.dataset.bound) return;
+    el.dataset.bound = '1';
+
+    el.addEventListener('blur', e => {
+      const field = e.target.dataset.docField;
+      if(!field) return;
+      let text = e.target.innerText.trim();
+
+      if(field.endsWith('_nm')){
+        text = text.replace(/^\(\s*/, '').replace(/\s*\)$/, '');
+      }
+
+      if(field === 'namaPekerjaan'){
+        const baseName = text.replace(/\s*\([^)]*\)$/, '').trim();
+        if(baseName) S.p.nama = baseName;
+      } else {
+        if(!S.doc) S.doc = JSON.parse(JSON.stringify(DEF_DOC));
+        S.doc[field] = text;
+      }
+
+      save();
+      const syncEl = document.getElementById('d_' + field);
+      if(syncEl && syncEl.value !== text) syncEl.value = text;
+    });
+
+    el.addEventListener('keydown', e => {
+      if(e.key === 'Enter' && !el.classList.contains('doc-sub')){
+        e.preventDefault();
+        el.blur();
+      }
+    });
+  });
+
+  // Tombol Templat Instansi
+  document.querySelectorAll('.instansi-presets .btn-preset[data-preset]').forEach(btn => {
+    btn.onclick = () => {
+      const pKey = btn.dataset.preset;
+      if(pKey && INSTANSI_PRESETS[pKey]){
+        const p = INSTANSI_PRESETS[pKey];
+        if(!S.doc) S.doc = {};
+        Object.assign(S.doc, p);
+        delete S.doc.logoCustom;
+        save();
+        renderDoc();
+      }
+    };
+  });
+
+  // Upload Logo
+  const upBtn = document.getElementById('uploadLogoBtn');
+  const fileInp = document.getElementById('logoFileInp');
+  const logoClick = document.getElementById('kopLogoClick');
+
+  if(upBtn && fileInp) {
+    upBtn.onclick = () => fileInp.click();
+  }
+  if(logoClick && fileInp) {
+    logoClick.onclick = () => fileInp.click();
+  }
+  if(fileInp) {
+    fileInp.onchange = e => {
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        if(!S.doc) S.doc = {};
+        S.doc.logoCustom = ev.target.result;
+        save();
+        renderDoc();
+      };
+      reader.readAsDataURL(file);
+      e.target.value = '';
+    };
+  }
+}
+
+function togglePreview(enable){
+  const b=document.body;
+  const isPrev=(enable!==undefined)?enable:!b.classList.contains('preview-mode');
+  b.classList.toggle('preview-mode',isPrev);
+  const ban=$('#prevBanner');
+  if(ban)ban.style.display=isPrev?'flex':'none';
+  if(isPrev){
+    b.classList.remove('print-ringkasan','print-lengkap');
+    b.classList.add((S.doc&&S.doc.scope==='lengkap')?'print-lengkap':'print-ringkasan');
+    renderHasil();
+    renderDoc();
+  }else{
+    b.classList.remove('print-ringkasan','print-lengkap');
+  }
+}
+
+function printDoc(){
+  const d=S.doc||DEF_DOC;
+  document.body.classList.remove('print-ringkasan','print-lengkap');
+  document.body.classList.add(d.scope==='lengkap'?'print-lengkap':'print-ringkasan');
+
+  let pageStyle=document.getElementById('dynamicPageStyle');
+  if(!pageStyle){
+    pageStyle=document.createElement('style');
+    pageStyle.id='dynamicPageStyle';
+    document.head.appendChild(pageStyle);
+  }
+  pageStyle.innerHTML=`@media print{@page{size:A4 ${d.orient||'landscape'}!important}}`;
+
+  renderHasil();
+  renderDoc();
+  window.print();
+}
+
+$('#oP').oninput=e=>{S.opt.profit=parseFloat(e.target.value)||0;renderHasil();save()};
+$('#oN').oninput=e=>{S.opt.ppn=parseFloat(e.target.value)||0;renderHasil();save()};
+$('#oH').onchange=e=>{S.opt.hspOh=e.target.checked;renderHasil();save()};
+
+$('#tbW').addEventListener('input',e=>{
+  const t=e.target;
+  if(!t.classList.contains('act-inp'))return;
+  const idx=parseInt(t.dataset.actIdx);
+  if(isNaN(idx))return;
+  if(!Array.isArray(S.act))S.act=[];
+  const val=t.value.trim();
+  S.act[idx]=(val==='')?null:Math.max(0,parseFloat(val)||0);
+  save();
+  renderHasil();
+});
+$('#actPlanBtn').onclick=()=>{
+  const r=hit();
+  S.act=r.wk.map(w=>Math.round(w*100)/100);
+  save();renderHasil();
+};
+$('#actLateBtn').onclick=()=>{
+  const r=hit();
+  const cutoff=Math.min(r.W,Math.max(3,Math.round(r.W*0.45)));
+  S.act=Array(r.W).fill(null);
+  for(let i=0;i<cutoff;i++)S.act[i]=Math.round(r.wk[i]*0.75*100)/100;
+  save();renderHasil();
+};
+$('#actFastBtn').onclick=()=>{
+  const r=hit();
+  const cutoff=Math.min(r.W,Math.max(3,Math.round(r.W*0.45)));
+  S.act=Array(r.W).fill(null);
+  for(let i=0;i<cutoff;i++)S.act[i]=Math.round(r.wk[i]*1.15*100)/100;
+  save();renderHasil();
+};
+$('#actClearBtn').onclick=()=>{
+  S.act=[];
+  save();renderHasil();
+};
+
+/* Document settings listeners */
+$('#docSettings').addEventListener('input',e=>{
+  const id=e.target.id;if(!id)return;
+  const k=id.replace('d_','');
+  if(k==='showSig')S.doc.showSig=e.target.checked;
+  else S.doc[k]=e.target.value;
+  renderDoc();save();
+});
+$('#docSettings').addEventListener('change',e=>{
+  const id=e.target.id;if(!id)return;
+  const k=id.replace('d_','');
+  if(k==='showSig')S.doc.showSig=e.target.checked;
+  else S.doc[k]=e.target.value;
+  renderDoc();save();
+});
+$('#docBtn').onclick=()=>{
+  const d=$('#docSettings');
+  if(d){
+    d.open=!d.open;
+    if(d.open)d.scrollIntoView({behavior:'smooth'});
+  }
+};
+$('#prevBtn').onclick=()=>togglePreview();
+$('#prevCloseBtn').onclick=()=>togglePreview(false);
+$('#prevPrintBtn').onclick=()=>{togglePreview(false);printDoc()};
+$('#prtBtn').onclick=printDoc;
+
+// Panduan cepat toggle
+const btnInfo=$('#toggleInfoBtn'),infoDet=$('#infoDetail');
+if(btnInfo&&infoDet){
+  btnInfo.onclick=()=>{
+    const isHidden = infoDet.style.display==='none'||infoDet.hidden;
+    infoDet.style.display = isHidden ? 'block' : 'none';
+    btnInfo.textContent = isHidden ? 'Tutup Panduan ▲' : 'Panduan Cepat ▾';
+  };
+}
+
+/* ---------- CSV ---------- */
+function buatCSV(){
+  const r=hit(),isRumah=S.p.tipe==='rumah',L=[
+    [S.p.nama + ' — ESTICON'],
+    ['Instansi', S.doc.instansi || ''],
+    ['Sub Bagian', S.doc.sub || ''],
+    ['Tipe Bangunan', isRumah?'Rumah Tinggal (1–3 Lantai)':'Gedung Bertingkat (1–10 Lantai)'],
+    ['Jumlah Lantai', S.p.n + ' Lantai'],
+    ['Sumber harga',S.src.sumber,S.src.wilayah,S.src.tahun],
+    ['Divisi','Pekerjaan','Dasar Volume','Koefisien','Volume','Satuan','Harga satuan','Jumlah','Mulai (mgg)','Durasi (mgg)']
+  ];
+  r.rows.forEach(x=>L.push([DIV[x.d],x.nm,x.b,x.k,x.vol,x.s,Math.round(x.hs),Math.round(x.jml),x.m,x.u]));
+  L.push([],['Biaya langsung','','','','','',Math.round(r.sub)],['Overhead & profit','','','','','',Math.round(r.oh)],['PPN','','','','','',Math.round(r.ppn)],['Total RAB','','','','','',Math.round(r.total)],[]);
+  L.push(['Minggu','Rencana (%)','Kumulatif Rencana (%)','Realisasi (%)','Kumulatif Realisasi (%)','Deviasi (%)','Biaya Rencana']);
+  r.wk.forEach((v,i)=>{
+    const a=r.actWk[i]!==null?r.actWk[i].toFixed(2):'';
+    const ca=r.actCum[i]!==null?r.actCum[i].toFixed(2):'';
+    const d=r.dev[i]!==null?r.dev[i].toFixed(2):'';
+    L.push([i+1,v.toFixed(2),r.cum[i].toFixed(2),a,ca,d,Math.round(v/100*r.sub)]);
+  });
+  L.push([],['Material / Upah / Komponen','Kebutuhan','Satuan','Biaya Total']);
+  Object.keys(r.mat).forEach(c=>L.push([S.hb[c]?S.hb[c].n:c,r.mat[c],S.hb[c]?S.hb[c].s:'',Math.round(r.mat[c]*(S.hb[c]?S.hb[c].h:0))]));
+  return L.map(x=>x.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+}
+function tampil(){const o=$('#csvOut');o.hidden=false;o.value=buatCSV();return o}
+$('#csvBtn').onclick=()=>{const o=tampil();try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+o.value],{type:'text/csv;charset=utf-8'}));a.download='esticon-rab-kurva-s.csv';document.body.appendChild(a);a.click();a.remove()}catch(e){}};
+$('#cpBtn').onclick=()=>{const o=tampil();try{navigator.clipboard.writeText(o.value)}catch(e){o.select()}};
+
+/* ---------- Inisialisasi ---------- */
+function refresh(){updPek();renderDer();renderHasil();save()}
+function renderAll(){
+  renderPar();
+  renderPek();
+  renderHrg();
+  renderKp();
+  renderDer();
+  renderDoc();
+  $('#oP').value=S.opt.profit;
+  $('#oN').value=S.opt.ppn;
+  $('#oH').checked=!!S.opt.hspOh;
+  renderHasil();
+  updateCalendarDisplay();
+  bindSchedControlEvents();
+  save();
+}
+
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  ['par','pek','hrg','has'].forEach(t=>$('#t-'+t).hidden=t!==b.dataset.t);
+  if(b.dataset.t==='has'){renderHasil();renderDoc();}
+});
+
+/* ---------- Simpan, buka, cetak ---------- */
+$('#saveBtn').onclick=()=>{
+  try{
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,2)],{type:'application/json'}));
+    a.download='esticon-'+(S.p.nama||'proyek').replace(/[^\w\-]+/g,'_')+'.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }catch(e){}
+};
+$('#openBtn').onclick=()=>$('#openFile').click();
+$('#openFile').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const rd=new FileReader();
+  rd.onload=()=>{
+    try{
+      const o=JSON.parse(rd.result);
+      if(!o.p||!o.items||!o.opt||!o.hb||!o.ah||!o.src)throw 0;
+      upgradeState(o);
+      S=o;
+      renderAll();
+      alert('✓ File proyek ESTICON berhasil dimuat!');
+    }catch(x){
+      alert('File proyek tidak valid.');
+    }
+  };
+  rd.readAsText(f);
+  e.target.value='';
+};
+
+/* ---------- Animasi Gelombang Kursor (Ergonomis, Lembut & Nyaman untuk Segala Usia) ---------- */
+// --- MANAJEMEN TEMA MODERN & ADAPTIF KONTRAS ---
+function initTheme(){
+  const saved = localStorage.getItem('esticon_theme') || 'system';
+  applyTheme(saved);
+  const btn = document.getElementById('themeToggleBtn');
+  if(btn){
+    btn.onclick = cycleTheme;
+  }
+  if(window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+      const cur = localStorage.getItem('esticon_theme') || 'system';
+      if(cur === 'system'){
+        applyTheme('system');
+      }
+    });
+  }
+}
+
+function applyTheme(theme){
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggleBtn');
+  if(theme === 'dark'){
+    html.setAttribute('data-theme', 'dark');
+    if(btn) btn.innerHTML = '🌙 Mode: Gelap';
+  } else if(theme === 'light'){
+    html.setAttribute('data-theme', 'light');
+    if(btn) btn.innerHTML = '☀️ Mode: Terang';
+  } else {
+    html.removeAttribute('data-theme');
+    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(btn) btn.innerHTML = '🖥️ Mode: Sistem (' + (isDark ? 'Gelap' : 'Terang') + ')';
+  }
+  localStorage.setItem('esticon_theme', theme);
+  try {
+    const res = calc();
+    if(res){
+      const el = document.getElementById('chartBox');
+      if(el) el.innerHTML = chart(res.wk, res.cum, res.actWk, res.actCum, res.lastActIdx);
+    }
+  } catch(e){}
+}
+
+function cycleTheme(){
+  const current = localStorage.getItem('esticon_theme') || 'system';
+  let next = 'light';
+  if(current === 'system') next = 'light';
+  else if(current === 'light') next = 'dark';
+  else next = 'system';
+  applyTheme(next);
+}
+
+// --- MANAJEMEN TEMA MODERN & ADAPTIF KONTRAS ---
+function initTheme(){
+  const saved = localStorage.getItem('esticon_theme') || 'system';
+  applyTheme(saved);
+  const btn = document.getElementById('themeToggleBtn');
+  if(btn){
+    btn.onclick = cycleTheme;
+  }
+  if(window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+      const cur = localStorage.getItem('esticon_theme') || 'system';
+      if(cur === 'system'){
+        applyTheme('system');
+      }
+    });
+  }
+}
+
+function applyTheme(theme){
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggleBtn');
+  if(theme === 'dark'){
+    html.setAttribute('data-theme', 'dark');
+    if(btn) btn.innerHTML = '🌙 Mode: Gelap';
+  } else if(theme === 'light'){
+    html.setAttribute('data-theme', 'light');
+    if(btn) btn.innerHTML = '☀️ Mode: Terang';
+  } else {
+    html.removeAttribute('data-theme');
+    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(btn) btn.innerHTML = '🖥️ Mode: Sistem (' + (isDark ? 'Gelap' : 'Terang') + ')';
+  }
+  localStorage.setItem('esticon_theme', theme);
+  try {
+    if(typeof renderHasil === 'function') {
+      renderHasil();
+    }
+  } catch(e){}
+}
+
+function cycleTheme(){
+  const current = localStorage.getItem('esticon_theme') || 'system';
+  let next = 'light';
+  if(current === 'system') next = 'light';
+  else if(current === 'light') next = 'dark';
+  else next = 'system';
+  applyTheme(next);
+}
+
+function initCursorWaves(){
+  let canvas = document.getElementById('cursorWaveCanvas');
+  if(!canvas){
+    canvas = document.createElement('canvas');
+    canvas.id = 'cursorWaveCanvas';
+    document.body.appendChild(canvas);
+  }
+  const ctx = canvas.getContext('2d');
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+  let dpr = window.devicePixelRatio || 1;
+
+  function resize(){
+    dpr = window.devicePixelRatio || 1;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isEnabled = localStorage.getItem('esticon_cursor_wave') !== 'off';
+  const btn = document.getElementById('cursorWaveBtn');
+  function updateBtn(){
+    if(btn){
+      btn.textContent = isEnabled ? '🌊 Bantuan Kursor: ON' : '🌊 Bantuan Kursor: OFF';
+      btn.classList.toggle('primary', isEnabled);
+    }
+    if(!isEnabled){
+      ctx.clearRect(0,0,width,height);
+    }
+  }
+  if(btn){
+    btn.onclick=()=>{
+      isEnabled = !isEnabled;
+      localStorage.setItem('esticon_cursor_wave', isEnabled ? 'on' : 'off');
+      updateBtn();
+    };
+  }
+  updateBtn();
+
+  let mouseX = width / 2;
+  let mouseY = height / 2;
+  let followerX = mouseX;
+  let followerY = mouseY;
+  let targetRadius = 12;
+  let currentRadius = 12;
+  let isHovering = false;
+  let ripples = [];
+  let lastMoveTime = performance.now();
+  let lastRippleTime = 0;
+
+  window.addEventListener('mousemove', e=>{
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    lastMoveTime = performance.now();
+
+    const target = e.target;
+    isHovering = !!(target && (
+      target.tagName === 'BUTTON' ||
+      target.tagName === 'A' ||
+      target.tagName === 'INPUT' ||
+      target.tagName === 'SELECT' ||
+      target.tagName === 'SUMMARY' ||
+      target.closest('button') ||
+      target.closest('a') ||
+      target.classList.contains('btn') ||
+      target.classList.contains('inline-edit') ||
+      target.classList.contains('btn-preset') ||
+      target.classList.contains('param-item')
+    ));
+
+    if(isEnabled && (lastMoveTime - lastRippleTime > 150)){
+      ripples.push({
+        x: mouseX,
+        y: mouseY,
+        r: 6,
+        maxR: 38,
+        alpha: 0.35,
+        speed: 1.0
+      });
+      lastRippleTime = lastMoveTime;
+    }
+  });
+
+  window.addEventListener('click', e=>{
+    if(!isEnabled) return;
+    lastMoveTime = performance.now();
+    for(let i=0; i<2; i++){
+      ripples.push({
+        x: e.clientX,
+        y: e.clientY,
+        r: 5 + i*8,
+        maxR: 50 + i*16,
+        alpha: 0.50 - i*0.15,
+        speed: 1.8 + i*0.5
+      });
+    }
+  });
+
+  function render(time){
+    if(isEnabled){
+      ctx.clearRect(0, 0, width, height);
+
+      followerX += (mouseX - followerX) * 0.20;
+      followerY += (mouseY - followerY) * 0.20;
+
+      targetRadius = isHovering ? 18 : 11;
+      currentRadius += (targetRadius - currentRadius) * 0.16;
+
+      const idleDuration = time - lastMoveTime;
+
+      // Adapt colors dynamically to light or dark mode
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+        (!document.documentElement.getAttribute('data-theme') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const colPrimary = isDark ? '56, 189, 248' : '30, 64, 175'; // Electric Sky Blue vs Deep Sapphire
+      const colSecondary = isDark ? '147, 197, 253' : '2, 132, 199';
+
+      if(idleDuration < 3500){
+        const fade = idleDuration > 2200 ? (3500 - idleDuration) / 1300 : 1;
+
+        const grad = ctx.createRadialGradient(
+          followerX, followerY, 2,
+          followerX, followerY, currentRadius * 2.0
+        );
+        grad.addColorStop(0, `rgba(${colPrimary}, ${0.22 * fade})`);
+        grad.addColorStop(0.6, `rgba(${colSecondary}, ${0.10 * fade})`);
+        grad.addColorStop(1, `rgba(${colPrimary}, 0)`);
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(followerX, followerY, currentRadius * 2.0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(followerX, followerY, currentRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${colPrimary}, ${0.60 * fade})`;
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${colPrimary}, ${0.80 * fade})`;
+        ctx.fill();
+      }
+
+      for(let i = ripples.length - 1; i >= 0; i--){
+        const rp = ripples[i];
+        rp.r += rp.speed;
+        rp.alpha *= 0.93;
+
+        if(rp.alpha <= 0.01 || rp.r >= rp.maxR){
+          ripples.splice(i, 1);
+          continue;
+        }
+
+        ctx.beginPath();
+        ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${colSecondary}, ${rp.alpha * (isDark ? 1.2 : 1.0)})`;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+      }
+    }
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+}
+
+// Inisialisasi Aplikasi Saat Memuat
+initTheme();
+renderAll();
+initCursorWaves();
+
+</script>
+<canvas id="cursorWaveCanvas"></canvas>
+</body>
+</html>
