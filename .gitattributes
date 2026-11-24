@@ -71,10 +71,10 @@
 # ---------------------------------------------------------------------------
 # Documents & Fonts
 # ---------------------------------------------------------------------------
-*.pdf                filter=lfs diff=lfs merge=lfs -text
-*.docx               filter=lfs diff=lfs merge=lfs -text
-*.xlsx               filter=lfs diff=lfs merge=lfs -text
-*.pptx               filter=lfs diff=lfs merge=lfs -text
+*.pdf                -text
+*.docx               -text
+*.xlsx               -text
+*.pptx               -text
 *.ttf                filter=lfs diff=lfs merge=lfs -text
 *.otf                filter=lfs diff=lfs merge=lfs -text
 *.woff               filter=lfs diff=lfs merge=lfs -text
